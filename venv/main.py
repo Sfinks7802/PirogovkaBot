@@ -1,6 +1,7 @@
 import asyncio
 from aiogram import Dispatcher
 from PrrivatInfo import bot
+from Handlers import cmd_start
 
 
 async def main():
