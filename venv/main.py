@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Dispatcher
-from PrrivatInfo import bot
+from PrivatInfo import bot
 from Handlers import cmd_start
 
 
