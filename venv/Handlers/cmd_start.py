@@ -13,6 +13,8 @@ async def send_random_value(callback: types.CallbackQuery):
     user_channel_status = await bot.get_chat_member(chat_id='-1001841308905', user_id=callback.from_user.id)
     if not isinstance(user_channel_status, ChatMemberLeft):
         await callback.message.answer('Спасибо')
+        await callback.message.edit_reply_markup(reply_markup=None)
+        await callback.answer()
 
 
 @router.message(Command('start'))
