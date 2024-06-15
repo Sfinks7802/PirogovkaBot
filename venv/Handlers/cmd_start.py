@@ -24,5 +24,5 @@ async def cmd_start(message: Message):
     if isinstance(user_channel_status, ChatMemberLeft):
         await message.answer('Для использования бота подпишитесь на канал', reply_markup=get_keyboard_for_not_sub())
     else:
-        await message.answer('Плати',reply_markup=get_kb_for_sub())
+        await message.answer('Добро пожаловать!',reply_markup=get_kb_for_sub())
 

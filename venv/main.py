@@ -1,13 +1,13 @@
 import asyncio
 from aiogram import Dispatcher
 from PrivatInfo import bot
-from Handlers import cmd_start, payment
+from Handlers import cmd_start, payment, workinprogress_elements
 
 
 async def main():
     dp = Dispatcher()
 
-    dp.include_routers(cmd_start.router, payment.router)
+    dp.include_routers(cmd_start.router, payment.router, workinprogress_elements.router)
     await dp.start_polling(bot)
 
 
