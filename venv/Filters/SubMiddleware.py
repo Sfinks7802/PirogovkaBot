@@ -1,6 +1,6 @@
 from aiogram import BaseMiddleware, types
 from aiogram.types import Message, TelegramObject, ChatMemberLeft, CallbackQuery
-from PrivatInfo import bot
+from Bot import bot
 from keyboards.start_not_sub_kb import get_keyboard_for_not_sub
 from typing import Any, Callable, Dict, Awaitable
 

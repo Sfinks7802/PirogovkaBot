@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20d93586-21dc-4fbe-8df9-dfecab9bb5a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/venv/Bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Filters/SubMiddleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Filters/SubMiddleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/payment.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/payment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/sfink/Documents/PythonCodes/PirogovkaBot",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
@@ -47,6 +50,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="BotToken" value="7389686605:AAF44nyXb8iL1b3YBN4z5AuUKYYDtkiqqx4" />
+        <env name="paytoken" value="381764678:TEST:87492" />
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />

@@ -1,7 +1,8 @@
 from aiogram import Router, types, F
 from Filters.payfilter import PayFilter
 from aiogram.types import Message, LabeledPrice
-from PrivatInfo import bot, paytoken
+from Bot import bot
+import os
 
 
 router = Router()
@@ -12,7 +13,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Конспект",
                            description="Плати за конспект",
-                           provider_token=paytoken,
+                           provider_token=os.environ.get('paytoken'),
                            currency="rub",
                            prices=[LabeledPrice(label="конспект", amount=1000 * 100)],
                            payload="test-invoice-payload")

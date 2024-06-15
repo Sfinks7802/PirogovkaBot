@@ -1,8 +1,9 @@
 import asyncio
+import os
 from aiogram import Dispatcher
-from PrivatInfo import bot
 from Handlers import cmd_start, payment, workinprogress_elements
 from Filters.SubMiddleware import SubMiddleware
+from Bot import bot
 
 
 async def main():
