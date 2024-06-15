@@ -3,7 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, ChatMemberLeft
 from PrivatInfo import bot
 from keyboards.start_not_sub_kb import get_keyboard_for_not_sub
-from keyboards.start_yes_sub_kb import get_kb_for_pay
+from keyboards.start_yes_sub_kb import get_kb_for_sub
 
 
 router = Router()
@@ -24,5 +24,5 @@ async def cmd_start(message: Message):
     if isinstance(user_channel_status, ChatMemberLeft):
         await message.answer('Для использования бота подпишитесь на канал', reply_markup=get_keyboard_for_not_sub())
     else:
-        await message.answer('Плати',reply_markup=get_kb_for_pay())
+        await message.answer('Плати',reply_markup=get_kb_for_sub())
 

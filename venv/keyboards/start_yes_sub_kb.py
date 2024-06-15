@@ -1,7 +1,7 @@
 from aiogram import types
 
 
-def get_kb_for_pay():
+def get_kb_for_sub():
     button = [[types.InlineKeyboardButton(text="Отдать свои деньги", callback_data="pay_your_money")]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=button)
     return keyboard
