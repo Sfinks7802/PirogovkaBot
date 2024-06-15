@@ -2,7 +2,6 @@ from aiogram import Router, types, F
 from Filters.payfilter import PayFilter
 from aiogram.types import Message, LabeledPrice
 from PrivatInfo import bot, paytoken
-from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
 router = Router()
@@ -28,7 +27,7 @@ async def pre_checkout_query(pre_checkout_q: types.PreCheckoutQuery):
 @router.message(PayFilter())
 async def successful_payment(message: types.Message):
     await bot.send_message(message.chat.id,
-                           f"Платеж на сумму {message.successful_payment.total_amount // 100} \
-{message.successful_payment.currency} прошел успешно!!!")
+                           f"Платеж на сумму {message.successful_payment.total_amount // 100} "
+                           f"{message.successful_payment.currency} прошел успешно!!!")
     if message.successful_payment.invoice_payload == "test-invoice-payload":
         await message.answer('здесь будет товар')

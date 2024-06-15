@@ -2,8 +2,8 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.types import Message, ChatMemberLeft
 from PrivatInfo import bot
-from keyboards.start_kb import get_keyboard_for_not_sub
-from keyboards.pay_kb import get_kb_for_pay
+from keyboards.start_not_sub_kb import get_keyboard_for_not_sub
+from keyboards.start_yes_sub_kb import get_kb_for_pay
 
 
 router = Router()
