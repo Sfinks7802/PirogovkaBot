@@ -10,6 +10,7 @@ async def main():
 
     dp.include_routers(cmd_start.router, payment.router, workinprogress_elements.router)
     dp.message.outer_middleware(SubMiddleware())
+    dp.callback_query.outer_middleware(SubMiddleware())
     await dp.start_polling(bot)
 
 
