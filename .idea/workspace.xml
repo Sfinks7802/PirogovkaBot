@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20d93586-21dc-4fbe-8df9-dfecab9bb5a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/Handlers/cq_contacts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/keyboards/get_contacts_kb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Handlers/cq_courses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/keyboards/select_courses_kb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/texts/all_texts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/texts/individual_courses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/keyboards/start_yes_sub_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/keyboards/start_yes_sub_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/venv/Handlers/cmd_start.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Handlers/cq_courses.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Handlers/cq_individual_courses.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Handlers/payment.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/keyboards/get_contacts_kb.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/keyboards/menu_kb.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/keyboards/select_courses_kb.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/main.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/texts/all_texts.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/texts/individual_courses.txt" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -42,11 +56,37 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sfink/Documents/PythonCodes/PirogovkaBot",
+    "last_opened_file_path": "C:/Users/sfink/Documents/PythonCodes/PirogovkaBot/venv",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sfink\Documents\PythonCodes\PirogovkaBot\venv" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="all_texts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PirogovkaBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/texts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/texts/all_texts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PirogovkaBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,6 +111,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.all_texts" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.all_texts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
