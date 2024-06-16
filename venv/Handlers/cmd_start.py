@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.types import Message, ChatMemberLeft
 from Bot import bot
-from keyboards.start_yes_sub_kb import get_kb_for_sub
+from keyboards.menu_kb import get_kb_for_sub
 
 
 router = Router()
