@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20d93586-21dc-4fbe-8df9-dfecab9bb5a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/Handlers/cq_group_courses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/texts/group_courses.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Contents/all_contents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/DataBase/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Handlers/cq_all_contents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/keyboards/select_courses_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/keyboards/select_courses_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/cq_contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cq_contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/payment.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/payment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/workinprogress_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/workinprogress_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/texts/all_texts.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/texts/all_texts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +54,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sfink/Documents/PythonCodes/PirogovkaBot/venv",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sfink/Documents/PythonCodes/PirogovkaBot/venv&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sfink\Documents\PythonCodes\PirogovkaBot\venv" />
@@ -91,9 +95,9 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="BotToken" value="7389686605:AAF44nyXb8iL1b3YBN4z5AuUKYYDtkiqqx4" />
         <env name="paytoken" value="381764678:TEST:87492" />
-        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.11 (PirogovkaBot)" />

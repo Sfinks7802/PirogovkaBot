@@ -3,6 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, ChatMemberLeft
 from Bot import bot
 from keyboards.menu_kb import get_kb_for_sub
+from DataBase.db import new_user, find_user
 
 
 router = Router()
@@ -19,5 +20,7 @@ async def check_sub(callback: types.CallbackQuery):
 
 @router.message(Command('start'))
 async def cmd_start(message: Message):
+    if type(find_user(message.from_user.id)) == None:
+        new_user(message.from_user.id)
     await message.answer('Добро пожаловать!',reply_markup=get_kb_for_sub())
 

@@ -3,7 +3,8 @@ from Filters.payfilter import PayFilter
 from aiogram.types import Message, LabeledPrice
 from Bot import bot
 import os
-
+from Contents.all_contents import get_payed_content
+from DataBase.db import update_contents
 
 router = Router()
 
@@ -27,8 +28,10 @@ async def pre_checkout_query(pre_checkout_q: types.PreCheckoutQuery):
 
 @router.message(PayFilter())
 async def successful_payment(message: types.Message):
-    await bot.send_message(message.chat.id,
-                           f"Платеж на сумму {message.successful_payment.total_amount // 100} "
-                           f"{message.successful_payment.currency} прошел успешно!!!")
-    if message.successful_payment.invoice_payload == "test-invoice-payload":
-        await message.answer('здесь будет товар')
+    # await bot.send_message(message.chat.id,
+    #                        f"Платеж на сумму {message.successful_payment.total_amount // 100} "
+    #                        f"{message.successful_payment.currency} прошел успешно!!!")
+    # if message.successful_payment.invoice_payload == "test-invoice-payload":
+    #     await message.answer('здесь будет товар')
+    update_contents(message.from_user.id, message.successful_payment.invoice_payload)
+    await message.answer_document(get_payed_content(message.successful_payment.invoice_payload))
