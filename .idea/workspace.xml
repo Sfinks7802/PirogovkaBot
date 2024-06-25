@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20d93586-21dc-4fbe-8df9-dfecab9bb5a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/Contents/all_contents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/DataBase/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Handlers/cq_all_contents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Handlers/cmd_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Handlers/invoices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/keyboards/all_contents_kb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cmd_start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Handlers/cq_contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cq_contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Handlers/payment.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/payment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Handlers/workinprogress_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/workinprogress_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Contents/all_contents.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Contents/all_contents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Handlers/cq_all_contents.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Handlers/cq_all_contents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/keyboards/menu_kb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>

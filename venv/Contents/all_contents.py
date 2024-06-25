@@ -13,4 +13,4 @@ def get_kb_contents(contents):
     return keyboard
 
 def get_payed_content(content_name):
-    return open(f'{content_name}.pdf' + '.pdf', 'rb')
+    return open(f'{content_name}.pdf' , 'rb')
