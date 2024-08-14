@@ -1,5 +1,8 @@
 from aiogram import types
 from pathlib import Path
+from aiogram.types import FSInputFile
+from Bot import all_media_dir
+import os
 
 all_contents_names = {
     "Bilety_1-20": "Билеты 1-20 био.",
@@ -34,6 +37,6 @@ def get_payed_content(content_name):
 # def get_photo():
 #     return get_file('photo_5255942924443705185_y.jpg')
 
-def get_photo():
-    photo = types.FSInputFile('photo_5255942924443705185_y.jpg')
-    return photo
+def get_file(name):
+    file = FSInputFile(path=os.path.join(all_media_dir, name))
+    return file

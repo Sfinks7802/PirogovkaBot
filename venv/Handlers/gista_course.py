@@ -1,5 +1,6 @@
 from aiogram import Router, F, types
-from aiogram.filters import Command
+from aiogram.filters import Command, CommandStart
+from all_contents import get_file
 from texts.all_texts import (gista_course_txt, for_who_txt, how_learn_txt, why_us_txt, mission_txt,
                              tarifs_course_txt, courator_txt, conspects_course_txt)
 
@@ -7,14 +8,15 @@ router = Router()
 
 
 def get_kb_for_gista_course():
-    buttons = [[types.InlineKeyboardButton(text="Для кого этот курс", callback_data="for_who")],
-                [types.InlineKeyboardButton(text='Конспекты', callback_data='conspects_course')],
+    buttons = [[types.InlineKeyboardButton(text='О курсе', callback_data='back_to_gista_course')],
+               [types.InlineKeyboardButton(text="Для кого этот курс", callback_data="for_who")],
+               [types.InlineKeyboardButton(text='Конспекты', callback_data='conspects_course')],
                [types.InlineKeyboardButton(text='Как проходит обучение', callback_data="how_learn")],
                [types.InlineKeyboardButton(text='Почему лучше с куратором', callback_data='courator')],
                [types.InlineKeyboardButton(text='Почему мы', callback_data='why_us')],
                [types.InlineKeyboardButton(text='Миссия этого курса', callback_data='mission_course')],
-               [types.InlineKeyboardButton(text='О курсе', callback_data='back_to_gista_course')],
-               [types.InlineKeyboardButton(text='ТАРИФЫ', callback_data='tarifs_course')]]
+               [types.InlineKeyboardButton(text='ТАРИФЫ', callback_data='tarifs_course')],
+               [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
 
@@ -36,8 +38,13 @@ def get_kb_for_buy_gista_course():
 
 @router.callback_query(F.data == 'gist_course')
 async def get_guist_course(callback: types.CallbackQuery):
-    await callback.message.answer(gista_course_txt, reply_markup=get_kb_for_gista_course())
+    await callback.message.edit_text(gista_course_txt, reply_markup=get_kb_for_gista_course())
     await callback.answer()
+
+
+# @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))
+# async def get_guist_course(message: types.Message):
+#     await message.answer(gista_course_txt, reply_markup=get_kb_for_gista_course())
 
 
 @router.message(Command('check'))

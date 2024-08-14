@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery
 from DataBase.db import get_contents
-from Contents.all_contents import get_kb_contents
+from all_contents import get_kb_contents
 
 
 router = Router()

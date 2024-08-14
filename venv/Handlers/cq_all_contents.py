@@ -11,7 +11,7 @@ router = Router()
 
 @router.callback_query(F.data == 'all_contents')
 async def all_contents( callback: types.CallbackQuery):
-    await callback.message.answer('Выберите категорию', reply_markup=get_kb_all_contents())
+    await callback.message.edit_text('Выберите категорию', reply_markup=get_kb_all_contents())
     await callback.answer()
 
 

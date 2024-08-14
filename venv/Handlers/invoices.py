@@ -1,19 +1,18 @@
-import asyncio
 from aiogram import Router, types, F
 from aiogram.types import Message, LabeledPrice
 from Bot import bot
 import os
-from Contents.all_contents import get_payed_content
+from all_contents import get_payed_content
 from DataBase.db import update_contents
 from Filters.InvoiceFilter import InvoiceFilter
 
 router = Router()
 
 lableprice = {
-'with_yourself_gista_course': ['Курс по гисте', 300],
-'letins-invoice-payload': ['Гайд по учебе', 300],
-'with_courator_gista_course': ['Курс по гисте', 300],
-'with_auther_gista_course': ['Курс по гисте', 300]
+'with_yourself_gista_course': ['Курс по гисте', 1500],
+'Oplata_letins': ['Гайд по учебе', 300],
+'with_courator_gista_course': ['Курс по гисте', 2500],
+'with_auther_gista_course': ['Курс по гисте', 4500]
 }
 
 
@@ -25,8 +24,9 @@ async def pay_money(callback: types.CallbackQuery):
                            provider_token=os.environ.get('paytoken'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
-                           payload=callback.data[1::])
-    await callback.message.edit_reply_markup(reply_markup=None)
+                           payload=callback.data[1::],
+                           protect_content=True)
+    await callback.answer()
 
 
 @router.pre_checkout_query(lambda query: True)
