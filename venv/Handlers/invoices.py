@@ -45,6 +45,7 @@ async def successful_payment(message: types.Message):
     flag = message.successful_payment.invoice_payload
     if flag == 'with_yourself_gista_course':
         await message.answer('https://t.me/+eNrEtEmJ3jc4OTky')
+        await bot.send_message(1924052002, text='Я сам гиста х1')
     elif flag == 'letins-invoice-payload':
         await message.answer('Здесь будет курс')
     elif flag == 'with_courator_gista_course':
@@ -52,8 +53,10 @@ async def successful_payment(message: types.Message):
                              'общая группа по курсу гистологии \n'
                              'https://t.me/+VAoNn_scisQ0ZWUy \n'
                              'группа с куратором')
+        await bot.send_message(1924052002, text='Куратор гиста х1')
     elif flag == 'with_auther_gista_course':
         await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
                              'общая группа по курсу гистологии \n'
                              'https://t.me/+VAoNn_scisQ0ZWUy \n'
                              'группа с автором курса')
+        await bot.send_message(1924052002, text='Автор курса гиста х1')

@@ -11,17 +11,26 @@ def get_kb_bibla():
                [types.InlineKeyboardButton(text="Гистология", callback_data='bbGist')],
                [types.InlineKeyboardButton(text="Биология", callback_data='bbBiol')],
                [types.InlineKeyboardButton(text="Латинский", callback_data='bbLat')],
+               [types.InlineKeyboardButton(text="Химия", callback_data='bbHim')],
                [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
 
 
 def get_kb_bibla_Anat():
-    buttons = [[types.InlineKeyboardButton(text="Анатомия", callback_data='bbAnat')],
-               [types.InlineKeyboardButton(text="Гистология", callback_data='bbGist')],
-               [types.InlineKeyboardButton(text="Биология", callback_data='bbBiol')],
-               [types.InlineKeyboardButton(text="Латинский", callback_data='bbLat')],
-               [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
+    buttons = [[types.InlineKeyboardButton(text="Дых. и мочепол. сис.", url='https://drive.google.com/drive/folders/1ruFVLCrXpsbzm2nAGUWeERnSB4i9X1oy?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Миология", url='https://drive.google.com/drive/folders/1POdJLASUwOdvclVJu8-VkQlZaPDdeT5v?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Остеология", url='https://drive.google.com/drive/folders/1dp7BoCnx0txjhW25Lkr1jfjHGQ5iU0Ne?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Пищевар. сис.", url='https://drive.google.com/drive/folders/1mvisp6Sy1d0T5RC3JWx_MzK_-exkOtPx?usp=drive_link')],
+               [types.InlineKeyboardButton(text="ПНС", url='https://drive.google.com/drive/folders/1tj2yk3VaPNSmqhqZRQ9QKaYY24ACCe1F?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Синдесмология", url='https://drive.google.com/drive/folders/1CvvLK9ihH6ym8jwhKX94Hv2VJfBHY921?usp=drive_link')],
+               [types.InlineKeyboardButton(text="ССС", url='https://drive.google.com/drive/folders/1IRJQtHdg7iXq8k2WWEDKe4pUn_6WLXyq?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Учебники", url='https://drive.google.com/drive/folders/1tEP_D_TYIQN-r4wmQqoT-1xnCKgg4yy8?usp=drive_link')],
+               [types.InlineKeyboardButton(text="ЦНС", url='https://drive.google.com/drive/folders/11WKo85IvGt9yDNgf3jAo7-Y7L2eiod4k?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Экзамен", url='https://drive.google.com/drive/folders/1kO0xoSDhbTy9O9jbzxmJM1oK5ogdPAx9?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Эндокринная сис.", url='https://drive.google.com/drive/folders/1Jc148PNQEW2GFGBNDVrRT-eiZhj713Kk?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Эстезиология. Черепные нервы", url='https://drive.google.com/drive/folders/1qyqXZ7biWVpimHW4C2cnwH16oMWG7mDq?usp=drive_link')],
+               [types.InlineKeyboardButton(text='Назад', callback_data='bibla')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
 
@@ -60,7 +69,41 @@ def get_kb_bibla_Biol():
     return keyboard
 
 
+def get_kb_bibla_Him():
+    buttons = [[types.InlineKeyboardButton(text="1 колок", url='https://drive.google.com/drive/folders/1DBzrua9-YQ9U-sASXjheGFH24tRD-B8e?usp=sharing')],
+               [types.InlineKeyboardButton(text="2 колок", url='https://drive.google.com/drive/folders/1G6bqv3Lvy7oPE97OG24Pv41LCYM8lVrv?usp=drive_link')],
+               [types.InlineKeyboardButton(text="3 колок", url='https://drive.google.com/drive/folders/18zOi58bXrVsP375LsidLY8jcmU-fKjL_?usp=drive_link')],
+               [types.InlineKeyboardButton(text="4 колок", url='https://drive.google.com/drive/folders/1CnFc6moIdKh-dAq-TVNIZFtBxEgcR26Z?usp=drive_link')],
+               [types.InlineKeyboardButton(text="5 колок", url='https://drive.google.com/drive/folders/1N5NrlStMLQO9IKWIzS0DYUm5iv344A0c?usp=drive_link')],
+               [types.InlineKeyboardButton(text="6 колок", url='https://drive.google.com/drive/folders/1_MA42UUJxmO86VIeUWAHX6idVWoNCRkU?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Учебники/методы", url='https://drive.google.com/drive/folders/1EGABcvxpqkIPxuZJHqzcOX664Ng72GYH?usp=drive_link')],
+               [types.InlineKeyboardButton(text="ЭКЗАМЕН", url='https://drive.google.com/drive/folders/1zK7vCc68AgOW1_3iO3zNqEqe0-cc40DD?usp=drive_link')],
+               [types.InlineKeyboardButton(text='Назад', callback_data='bibla')]]
+    keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
+    return keyboard
+
+
 @router.callback_query(F.data == 'bibla')
 async def get_menu(callback: types.CallbackQuery):
     await callback.message.edit_text(bibla_text, reply_markup=get_kb_bibla(), parse_mode='HTML')
     await callback.answer()
+
+@router.callback_query(F.data == 'bbAnat')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Anat())
+
+@router.callback_query(F.data == 'bbGist')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Gist())
+
+@router.callback_query(F.data == 'bbBiol')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Biol())
+
+@router.callback_query(F.data == 'bbLat')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Lat())
+
+@router.callback_query(F.data == 'bbHim')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Him())

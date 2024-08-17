@@ -2,7 +2,7 @@ from aiogram import types
 
  
 def get_kb_for_sub():
-    buttons = [[types.InlineKeyboardButton(text="Библиотека студента", callback_data="bibla")],
+    buttons = [[types.InlineKeyboardButton(text="Эксклюзивно РНИМУ", callback_data="bibla")],
                [types.InlineKeyboardButton(text="Курс по гистологии", callback_data="gist_course")],
                [types.InlineKeyboardButton(text='Репетиторы', callback_data='courses')],
                [types.InlineKeyboardButton(text='Материалы от Пироговки', callback_data='Pirogovka_matirials')]]
@@ -12,9 +12,9 @@ def get_kb_for_sub():
 
 def get_kb_Pirogovka_matirials():
     buttons = [
-        [types.InlineKeyboardButton(text='Гайд по учебе', callback_data='letniy_intensiv')],
+        # [types.InlineKeyboardButton(text='Гайд по учебе', callback_data='letniy_intensiv')],
         [types.InlineKeyboardButton(text='Контакты', callback_data='contacts')],
-        [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],
+        # [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],
         [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]
     ]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
