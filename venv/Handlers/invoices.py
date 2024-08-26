@@ -11,6 +11,7 @@ router = Router()
 lableprice = {
 'with_yourself_gista_course': ['Курс по гисте', 1500],
 'Oplata_letins': ['Гайд по учебе', 300],
+'cnsint_oplata': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'with_auther_gista_course': ['Курс по гисте', 4500]
 }
@@ -60,3 +61,6 @@ async def successful_payment(message: types.Message):
                              'https://t.me/+VAoNn_scisQ0ZWUy \n'
                              'группа с автором курса')
         await bot.send_message(1924052002, text='Автор курса гиста х1')
+    elif flag == 'cnsint_oplata':
+        await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
+        await bot.send_message(1924052002, text='Интенсив ЦНС х1')
