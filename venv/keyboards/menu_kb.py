@@ -14,6 +14,7 @@ def get_kb_Pirogovka_matirials():
     buttons = [
         # [types.InlineKeyboardButton(text='Гайд по учебе', callback_data='letniy_intensiv')],
         [types.InlineKeyboardButton(text='Контакты', callback_data='contacts')],
+        [types.InlineKeyboardButton(text='Конспект сердечно-сосуд. сис.', callback_data='SerSod_conspect')],
         [types.InlineKeyboardButton(text='Интенсив ЦНС', callback_data='cnsint')],
         [types.InlineKeyboardButton(text='Чеклист по покупкам', callback_data='checklist')],
         # [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],

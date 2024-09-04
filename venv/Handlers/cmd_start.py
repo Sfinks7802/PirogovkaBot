@@ -5,10 +5,11 @@ from Bot import bot
 from keyboards.menu_kb import get_kb_for_sub
 from keyboards.start_not_sub_kb import get_keyboard_for_not_sub_bibla
 from DataBase.db import new_user, find_user
-from texts.all_texts import gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt
+from texts.all_texts import gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from Handlers.bibla import get_kb_bibla
 
 
 router = Router()
@@ -19,6 +20,13 @@ async def get_guist_course(message: types.Message):
     if type(find_user(message.from_user.id)) == None:
         new_user(message.from_user.id)
     await message.answer(gista_course_txt, reply_markup=get_kb_for_gista_course())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'bibla'))
+async def get_guist_course(message: types.Message):
+    if type(find_user(message.from_user.id)) == None:
+        new_user(message.from_user.id)
+    await message.answer(bibla_text, reply_markup=get_kb_bibla())
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'cnsint'))

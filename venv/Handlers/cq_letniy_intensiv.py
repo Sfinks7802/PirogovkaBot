@@ -14,7 +14,7 @@ def get_kb_leto():
     buttons = [[types.InlineKeyboardButton(text="О гайде", callback_data="letniy_intensiv")],
                [types.InlineKeyboardButton(text="Темы гайда", callback_data="Temy_intensiva")],
                [types.InlineKeyboardButton(text='Кому подходит гайд', callback_data='Komu_podhodit')],
-               [types.InlineKeyboardButton(text='Купить (300р)', callback_data='!Oplata_letins')],
+               # [types.InlineKeyboardButton(text='Купить (300р)', callback_data='!Oplata_letins')],
                [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard

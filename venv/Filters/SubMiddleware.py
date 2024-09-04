@@ -18,7 +18,7 @@ from typing import Any, Callable, Dict, Awaitable
 #         else:
 #             return await handler(event, data)
 
-text = '💎<i>Чтобы воспользоваться библиотекой, проверь, что ты подписан на @pirogovka_now и <u><a href="https://vk.com/kurs_202425">форум первокурсников РНИМУ</a></u></i>'
+text = '💎<i>Чтобы воспользоваться библиотекой, проверь, что ты подписан на @pirogovka_now и <u><a href="https://vk.com/pirogovka_now">форум первокурсников РНИМУ</a></u></i>'
 class SubMiddlewareBibla(BaseMiddleware):
     async def __call__(
             self,
