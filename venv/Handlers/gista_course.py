@@ -30,7 +30,7 @@ def get_kb_for_tarifs():
 def get_kb_for_buy_gista_course():
     buttons = [[types.InlineKeyboardButton(text="Я сам", callback_data="!with_yourself_gista_course")],
                [types.InlineKeyboardButton(text='С куратором', callback_data='!with_courator_gista_course')],
-               [types.InlineKeyboardButton(text='С автором курса', callback_data='!with_auther_gista_course')],
+               # [types.InlineKeyboardButton(text='С автором курса', callback_data='!with_auther_gista_course')],
                [types.InlineKeyboardButton(text='Назад', callback_data='back_to_gista_course')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
@@ -49,7 +49,7 @@ async def get_guist_course(callback: types.CallbackQuery):
 
 @router.message(Command('check'))
 async def chek_user(message: types.Message):
-    print(find_user(message.from_user.id))
+    # print(find_user(message.from_user.id))
     await message.answer('nigger')
 
 

@@ -4,14 +4,18 @@ from texts.all_texts import bibla_text
 from Filters.SubMiddleware import SubMiddlewareBibla
 
 router = Router()
-router.callback_query.middleware(SubMiddlewareBibla())
-
+# router.callback_query.middleware(SubMiddlewareBibla())
 def get_kb_bibla():
     buttons = [[types.InlineKeyboardButton(text="Анатомия", callback_data='bbAnat')],
                [types.InlineKeyboardButton(text="Гистология", callback_data='bbGist')],
+               [types.InlineKeyboardButton(text="Биохимия", url='https://drive.google.com/drive/folders/1-od7myWaZzJusSeZ1mqdioXkAN-67_m6?usp=sharing')],
+               [types.InlineKeyboardButton(text="Микробиология", url='https://drive.google.com/drive/folders/1-oXxV2FgVB5i19M7CWKxzbOE51uSbS_N?usp=sharing')],
+               [types.InlineKeyboardButton(text="Физиология", url='https://drive.google.com/drive/folders/1-SD-2Z72d_s9IY-KqV23RYJBmLeOsnTw?usp=sharing')],
                [types.InlineKeyboardButton(text="Биология", callback_data='bbBiol')],
                [types.InlineKeyboardButton(text="Латинский", callback_data='bbLat')],
                [types.InlineKeyboardButton(text="Химия", callback_data='bbHim')],
+               [types.InlineKeyboardButton(text="Физика", callback_data='bbPhyz')],
+               [types.InlineKeyboardButton(text="Биоэтика", url='https://drive.google.com/drive/folders/1-q67GrVtQgG_ZjtB27YZQMtHoyH0KClP?usp=sharing')],
                [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
@@ -50,6 +54,20 @@ def get_kb_bibla_Lat():
                [types.InlineKeyboardButton(text="Рабочая тетрадь", url='https://drive.google.com/drive/folders/1egGm49sn10bqYqXJq8vrf1tMCBdJFdnC?usp=drive_link')],
                [types.InlineKeyboardButton(text="Устная часть", url='https://drive.google.com/drive/folders/1sc24Vz-WbJoqUQXPfrGIMxWbH5Du0_Y4?usp=drive_link')],
                [types.InlineKeyboardButton(text="Учебник", url='https://drive.google.com/drive/folders/1xBfG9CFJwcvTizVc7kr3muyc2Dml-Stv?usp=drive_link')],
+               [types.InlineKeyboardButton(text='Назад', callback_data='bibla')]]
+    keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
+    return keyboard
+
+
+def get_kb_bibla_Phyz():
+    buttons = [[types.InlineKeyboardButton(text="База", url='https://drive.google.com/drive/folders/1-DKvWlNkJXE5npIXwIWpl4bLBaeujDfu?usp=sharing')],
+               [types.InlineKeyboardButton(text="Второй коллок", url='https://drive.google.com/drive/folders/1-NnS_lV0ATQIeC-bS6ekneg6IFNlitla?usp=sharing')],
+               [types.InlineKeyboardButton(text="Лабы", url='https://drive.google.com/drive/folders/1-FY0dY342GQspbbmd9vsQ4yeLVrdg4QW?usp=sharing')],
+               [types.InlineKeyboardButton(text="Первый коллок", url='https://drive.google.com/drive/folders/1-LlEBTdF8SPuo7Lni6dfjkQHey7Fl29z?usp=sharing')],
+               [types.InlineKeyboardButton(text="Третий коллок", url='https://drive.google.com/drive/folders/1-Nwipec0ijUrk_s_z4pWYJm8O08Vbsa9?usp=sharing')],
+               [types.InlineKeyboardButton(text="Учебники", url='https://drive.google.com/drive/folders/1-BUcCS8aE4UadfO38FZaE-KT7xZrpVux?usp=sharing')],
+               [types.InlineKeyboardButton(text="Четвертый коллок", url='https://drive.google.com/drive/folders/1-TaJDxjBBcMohM3CVRReNvqoJqUIABlu?usp=sharing')],
+               [types.InlineKeyboardButton(text="Конспекты", url='https://drive.google.com/file/d/1noRsAa_Ri1jsW2Oe-YOz8pFGWgZSlMFv/view?usp=sharing')],
                [types.InlineKeyboardButton(text='Назад', callback_data='bibla')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
@@ -107,3 +125,7 @@ async def get_menu(callback: types.CallbackQuery):
 @router.callback_query(F.data == 'bbHim')
 async def get_menu(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Him())
+
+@router.callback_query(F.data == 'bbPhyz')
+async def get_menu(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_bibla_Phyz())

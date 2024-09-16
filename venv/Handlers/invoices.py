@@ -46,26 +46,32 @@ async def pre_checkout_query(pre_checkout_q: types.PreCheckoutQuery):
 @router.message(F.successful_payment)
 async def successful_payment(message: types.Message):
     flag = message.successful_payment.invoice_payload
-    if flag == 'with_yourself_gista_course':
-        await message.answer('https://t.me/+eNrEtEmJ3jc4OTky')
-        await bot.send_message(1924052002, text='Я сам гиста х1')
-    elif flag == 'letins-invoice-payload':
-        await message.answer('Здесь будет курс')
-    elif flag == 'with_courator_gista_course':
-        await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
-                             'общая группа по курсу гистологии \n'
-                             'https://t.me/+VAoNn_scisQ0ZWUy \n'
-                             'группа с куратором')
-        await bot.send_message(1924052002, text='Куратор гиста х1')
-    elif flag == 'with_auther_gista_course':
-        await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
-                             'общая группа по курсу гистологии \n'
-                             'https://t.me/+VAoNn_scisQ0ZWUy \n'
-                             'группа с автором курса')
-        await bot.send_message(1924052002, text='Автор курса гиста х1')
-    elif flag == 'cnsint_oplata':
-        await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
-        await bot.send_message(1924052002, text='Интенсив ЦНС х1')
-    elif flag == 'SerSod_conspect_pay':
-        await message.answer_document(get_file('Конспект_ССС.pdf'))
-        await bot.send_message(1924052002, text='Конспект ССС х1')
+    try:
+        if flag == 'with_yourself_gista_course':
+            await message.answer('https://t.me/+eNrEtEmJ3jc4OTky')
+            await bot.send_message(1924052002, text='Я сам гиста х1')
+        elif flag == 'letins-invoice-payload':
+            await message.answer('Здесь будет курс')
+        elif flag == 'with_courator_gista_course':
+            await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
+                                 'общая группа по курсу гистологии \n'
+                                 'https://t.me/+VAoNn_scisQ0ZWUy \n'
+                                 'группа с куратором')
+            await bot.send_message(1924052002, text='Куратор гиста х1')
+        elif flag == 'with_auther_gista_course':
+            await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
+                                 'общая группа по курсу гистологии \n'
+                                 'https://t.me/+VAoNn_scisQ0ZWUy \n'
+                                 'группа с автором курса')
+            await bot.send_message(1924052002, text='Автор курса гиста х1')
+        elif flag == 'cnsint_oplata':
+            await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
+            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == 'SerSod_conspect_pay':
+            await message.answer_document(get_file('Конспект_ССС.pdf'))
+            await bot.send_message(1924052002, text='Конспект ССС х1')
+    except Exception:
+        await message.answer('Упс! Кажется произошла какая-то непрвиденная ошибка( \n'
+                             'напишите @pirogovka_helper\n'
+                             'отчет уже отправлен поддержке')
+        await bot.send_message(1924052002, text=f'Опять ошибка( техническое имя товара: {flag}, username пользователя: @{message.from_user.username}')

@@ -9,4 +9,5 @@ router = Router()
 
 @router.message(Command('test'))
 async def get_menu(message: types.Message):
-    await message.answer_photo(photo=get_file('photo_5255942924443705185_y.jpg'))
+    # await message.answer_photo(photo=get_file('photo_5255942924443705185_y.jpg'))
+    await message.answer(f'@{message.from_user.username}')

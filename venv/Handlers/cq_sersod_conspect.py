@@ -1,6 +1,7 @@
 from aiogram import Router, F, types
 from texts.all_texts import sersod_txt
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from all_contents import get_file
 
 
 router = Router()
@@ -10,6 +11,7 @@ router = Router()
 async def get_contacts(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text="Купить (300р)", callback_data='!SerSod_conspect_pay'))
-    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
-    await callback.message.edit_text(sersod_txt, reply_markup=builder.as_markup())
+    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='menu'))
+    await callback.message.answer_photo(photo=get_file('SerSod_photo.jpg'), caption=sersod_txt, reply_markup=builder.as_markup(), parse_mode='HTML')
+    # await callback.message.edit_media(media=get_file('SerSod_photo'), reply_markup=builder.as_markup())
     await callback.answer()
