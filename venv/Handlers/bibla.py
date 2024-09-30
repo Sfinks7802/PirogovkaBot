@@ -15,6 +15,8 @@ def get_kb_bibla():
                [types.InlineKeyboardButton(text="Латинский", callback_data='bbLat')],
                [types.InlineKeyboardButton(text="Химия", callback_data='bbHim')],
                [types.InlineKeyboardButton(text="Физика", callback_data='bbPhyz')],
+               [types.InlineKeyboardButton(text="Истмед", url='https://drive.google.com/drive/folders/1-e9GRxG4cU7GwK0uDb1EDDc2qQ5_nBo2')],
+               [types.InlineKeyboardButton(text="БЖД", url='https://drive.google.com/drive/folders/1-dTVuh-LVSdopDBjqDcitHwG9YVjHTcA')],
                [types.InlineKeyboardButton(text="Биоэтика", url='https://drive.google.com/drive/folders/1-q67GrVtQgG_ZjtB27YZQMtHoyH0KClP?usp=sharing')],
                [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
@@ -43,6 +45,15 @@ def get_kb_bibla_Gist():
     buttons = [[types.InlineKeyboardButton(text="Кафедральные методички", url='https://drive.google.com/drive/folders/1HwhbBdVbt_gSj00wp-60fIF0VkNYTOuV?usp=drive_link')],
                [types.InlineKeyboardButton(text="Неофиц. методы", url='https://drive.google.com/drive/folders/1-2Ha3Ji0Bqdf3NubXJN5hcV-tlKyyX0x?usp=drive_link')],
                [types.InlineKeyboardButton(text="Учебники и атласы", url='https://drive.google.com/drive/folders/1D-H9W9yCYSEryZLTun7RPVhZVHNTLhgn?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 1", url='https://drive.google.com/drive/folders/1-6RMIfi-H-Z_wNzWTz4Q77UzKyY4e0-T?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 2", url='https://drive.google.com/drive/folders/1-8TK_moijd1Zv8xnzLI0ZAVdpk2_Ctwe?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 3", url='https://drive.google.com/drive/folders/1-CZB5Xg0NfVRQvoQaPyZi7gYnJIqyNqK?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 4", url='https://drive.google.com/drive/folders/1Di0QNi-eD8jag8hdeTThjz1L1B8LppWl?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 5", url='https://drive.google.com/drive/folders/1X8Rh8d9mXAnzkZwr_MWPGORZh7QGZQXg?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 6", url='https://drive.google.com/drive/folders/19MOpoAEsRTOdzWA3ZJu3WVazxihvbJiZ?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 7", url='https://drive.google.com/drive/folders/12nE64iV8MR7GC6Xp9xmZiP4nkV1WR765?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Раб. тетради/Альбомы", url='https://drive.google.com/drive/folders/1QPppQShrOaxPlx9yMBcanSv2xF2rRLml?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Экзамен", url='https://drive.google.com/drive/folders/1OFu3TFGgu_vUxwcTY6vbtq-LUs-W2VtV?usp=drive_link')],
                [types.InlineKeyboardButton(text='Назад', callback_data='bibla')]]
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
@@ -74,11 +85,15 @@ def get_kb_bibla_Phyz():
 
 
 def get_kb_bibla_Biol():
-    buttons = [[types.InlineKeyboardButton(text="Доп. конспекты, файлы, таблицы", url='https://drive.google.com/drive/folders/1-Ky4FTIN4xuBpl_Fo5PT_9wWoO8PZWx0?usp=drive_link')],
-               [types.InlineKeyboardButton(text="Лабы", url='https://drive.google.com/drive/folders/1-GhPQqSk5dOml8XA46w-xrFkIUjnwiaS?usp=drive_link')],
+    buttons = [[types.InlineKeyboardButton(text="Лабы", url='https://drive.google.com/drive/folders/1-GhPQqSk5dOml8XA46w-xrFkIUjnwiaS?usp=drive_link')],
                [types.InlineKeyboardButton(text="Методички", url='https://drive.google.com/drive/folders/1ux8zwt6GYvDq6SiOiJ6cQSYoEm9eo-v5?usp=drive_link')],
-               [types.InlineKeyboardButton(text="Ответы на коллки и тесты", url='https://drive.google.com/drive/folders/1-JUi3fzn7Wngr-j8m9A3vWCQpuM2lNiO?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 1", url='https://drive.google.com/drive/folders/1-JUi3fzn7Wngr-j8m9A3vWCQpuM2lNiO?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 2", url='https://drive.google.com/drive/folders/1-UwQdNO3NF6BOioUs-0m2PFFxzNPKYgf?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 3", url='https://drive.google.com/drive/folders/1-fAsayXSgiA1Nogtg4KzolN-aCCNn8-N?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 4", url='https://drive.google.com/drive/folders/1-nTLoiFmvbQcqaU-TCclbJGKJQtp27jh?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Коллок 5", url='https://drive.google.com/drive/folders/1-uYCIqMnS2aIgv-JC0R32_eyu8Yw0bNl?usp=drive_link')],
                [types.InlineKeyboardButton(text="Учебники", url='https://drive.google.com/drive/folders/1nVP1I8tF6EwmYOzLKAB-_SrQbOJUf57q?usp=drive_link')],
+               [types.InlineKeyboardButton(text="Лекционные тесты", url='https://drive.google.com/drive/folders/1-e9mXUwWqT9L6JEg9rQnk6hmSzAOsmSY?usp=drive_link')],
                [types.InlineKeyboardButton(text="Тетради с ответами", url='https://drive.google.com/drive/folders/1Dw3Vz2iN52DSPMYHELud0FZBCTrH2ri4?usp=drive_link')],
                [types.InlineKeyboardButton(text="Экзамен", url='https://drive.google.com/drive/folders/1-Gu_BLGjah9bw75TpTrOWHyvc6IjThJh?usp=drive_link')],
                [types.InlineKeyboardButton(text="Ярыгин", url='https://drive.google.com/drive/folders/1onQEkrBSm00j0UO66QHVi5JE3GhDNiDO?usp=drive_link')],

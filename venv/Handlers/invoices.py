@@ -12,9 +12,12 @@ router = Router()
 lableprice = {
 'with_yourself_gista_course': ['Курс по гисте', 1500],
 'Oplata_letins': ['Гайд по учебе', 300],
+'vskint_oplata': ['Вспомнить всё 4', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
+'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
+'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
 'with_auther_gista_course': ['Курс по гисте', 4500]
 }
 
@@ -48,14 +51,20 @@ async def successful_payment(message: types.Message):
     flag = message.successful_payment.invoice_payload
     try:
         if flag == 'with_yourself_gista_course':
-            await message.answer('https://t.me/+eNrEtEmJ3jc4OTky')
+            await message.answer('https://t.me/+tGxG7_ZbWJ40MDcy')
             await bot.send_message(1924052002, text='Я сам гиста х1')
+        elif flag == 'vskint_oplata':
+            await message.answer('Отлично! Оплата прошла, скоро вам напишет помошник @pirogovka_helper')
+            await bot.send_message(1924052002, text=f'Вспмнить всё х1, username пользователя: @{message.from_user.username}')
+        elif flag == 'anatint_oplata':
+            await message.answer('https://t.me/+mzccYh1g49JiMzAy')
+            await bot.send_message(1924052002, text=f'Анатомия. Черепно-мозговые нервы х1, username пользователя: @{message.from_user.username}')
         elif flag == 'letins-invoice-payload':
             await message.answer('Здесь будет курс')
         elif flag == 'with_courator_gista_course':
-            await message.answer('https://t.me/+eNrEtEmJ3jc4OTky \n'
+            await message.answer('https://t.me/+tGxG7_ZbWJ40MDcy \n'
                                  'общая группа по курсу гистологии \n'
-                                 'https://t.me/+VAoNn_scisQ0ZWUy \n'
+                                 'https://t.me/+tGxG7_ZbWJ40MDcy \n'
                                  'группа с куратором')
             await bot.send_message(1924052002, text='Куратор гиста х1')
         elif flag == 'with_auther_gista_course':
@@ -70,6 +79,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'SerSod_conspect_pay':
             await message.answer_document(get_file('Конспект_ССС.pdf'))
             await bot.send_message(1924052002, text='Конспект ССС х1')
+        elif flag == 'Embriogenez_conspect_pay':
+            await message.answer_document(get_file('Лекция_2_эмбриогенез.pdf'))
+            await bot.send_message(1924052002, text='Лекция_2_эмбриогенез х1')
     except Exception:
         await message.answer('Упс! Кажется произошла какая-то непрвиденная ошибка( \n'
                              'напишите @pirogovka_helper\n'

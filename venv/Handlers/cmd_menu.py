@@ -1,6 +1,6 @@
 from aiogram import Router, types, F
 from aiogram.filters import Command
-from keyboards.menu_kb import get_kb_for_sub, get_kb_Pirogovka_matirials
+from keyboards.menu_kb import get_kb_for_sub, get_kb_Pirogovka_matirials, get_kb_pirogovka_conspects
 
 
 router = Router()
@@ -19,3 +19,7 @@ async def get_menu(callback: types.CallbackQuery):
 @router.callback_query(F.data == 'Pirogovka_matirials')
 async def get_Pirogovka_matirials(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=get_kb_Pirogovka_matirials())
+
+@router.callback_query(F.data == 'pirogovka_conspects')
+async def get_Pirogovka_matirials(callback: types.CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=get_kb_pirogovka_conspects())
