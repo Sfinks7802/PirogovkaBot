@@ -78,7 +78,7 @@ async def successful_payment(message: types.Message):
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'remember5_oplata':
-            await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
+            await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'SerSod_conspect_pay':
             await message.answer_document(get_file('Конспект_ССС.pdf'))
