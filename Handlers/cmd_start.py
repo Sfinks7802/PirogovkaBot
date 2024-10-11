@@ -35,7 +35,7 @@ async def get_guist_course(message: types.Message):
 @router.message(CommandStart(deep_link=True, magic=F.args == 'remember5'))
 async def get_guist_course(message: types.Message):
     builder = InlineKeyboardBuilder()
-    builder.row(types.InlineKeyboardButton(text="Купить (400р)", callback_data='!remember5_oplata'))
+    builder.row(types.InlineKeyboardButton(text="Купить (500р)", callback_data='!remember5_oplata'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
     await message.answer(remember5_txt, reply_markup=builder.as_markup())
 
