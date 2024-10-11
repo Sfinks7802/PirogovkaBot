@@ -13,6 +13,7 @@ lableprice = {
 'with_yourself_gista_course': ['Курс по гисте', 1500],
 'Oplata_letins': ['Гайд по учебе', 300],
 'vskint_oplata': ['Вспомнить всё 4', 500],
+'remember5_oplata': ['Вспомнить всё 5', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
@@ -27,7 +28,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Виртуальный товар",
                            description="Оплата виртуального товара",
-                           provider_token=os.environ.get('paytoken'),
+                           provider_token=os.environ.get('paytokenTEST'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
@@ -74,6 +75,9 @@ async def successful_payment(message: types.Message):
                                  'группа с автором курса')
             await bot.send_message(1924052002, text='Автор курса гиста х1')
         elif flag == 'cnsint_oplata':
+            await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
+            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'SerSod_conspect_pay':
