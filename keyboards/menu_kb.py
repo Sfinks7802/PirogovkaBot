@@ -17,6 +17,7 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text='Конспекты', callback_data='pirogovka_conspects')],
         [types.InlineKeyboardButton(text='Вспомнить всё 4', callback_data='vskint')],
         [types.InlineKeyboardButton(text='Вспомнить всё 5', callback_data='remember5')],
+        [types.InlineKeyboardButton(text='Вспомнить всё 1', callback_data='remember1')],
         [types.InlineKeyboardButton(text='Интенсив ЦНС', callback_data='cnsint')],
         [types.InlineKeyboardButton(text='Чеклист по покупкам', callback_data='checklist')],
         [types.InlineKeyboardButton(text="Курс по гистологии", callback_data="gist_course")],

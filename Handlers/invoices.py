@@ -14,6 +14,7 @@ lableprice = {
 'Oplata_letins': ['Гайд по учебе', 300],
 'vskint_oplata': ['Вспомнить всё 4', 500],
 'remember5_oplata': ['Вспомнить всё 5', 500],
+'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
@@ -79,7 +80,10 @@ async def successful_payment(message: types.Message):
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
-            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+            await bot.send_message(1924052002, text='Вспомнить всё 5 х1')
+        elif flag == 'remember1_oplata':
+            await message.answer('https://t.me/+lnaoEUIYZVhlY2Uy')
+            await bot.send_message(1924052002, text='Вспомнить всё 1 х1')
         elif flag == 'SerSod_conspect_pay':
             await message.answer_document(get_file('Конспект_ССС.pdf'))
             await bot.send_message(1924052002, text='Конспект ССС х1')
