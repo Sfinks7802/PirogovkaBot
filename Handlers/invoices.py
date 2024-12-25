@@ -17,6 +17,7 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'gist_ekz_oplata': ['Экзамен по гистологии', 3700],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
@@ -84,6 +85,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'remember1_oplata':
             await message.answer('https://t.me/+lnaoEUIYZVhlY2Uy')
             await bot.send_message(1924052002, text='Вспомнить всё 1 х1')
+        elif flag == 'gist_ekz_oplata':
+            await message.answer('https://t.me/+by534wVm_XcwMGYy')
+            await bot.send_message(1924052002, text='Гиста экзамен х1')
         elif flag == 'SerSod_conspect_pay':
             await message.answer_document(get_file('Конспект_ССС.pdf'))
             await bot.send_message(1924052002, text='Конспект ССС х1')
