@@ -35,7 +35,7 @@ async def get_guist_course(message: types.Message):
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_ekz'))
 async def get_guist_course(message: types.Message):
     builder = InlineKeyboardBuilder()
-    builder.row(types.InlineKeyboardButton(text="Купить (3700р)", callback_data='!gist_ekz_oplata'))
+    builder.row(types.InlineKeyboardButton(text="Купить (4000р)", callback_data='!gist_ekz_oplata'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
     await message.answer(gista_ekz_txt, reply_markup=builder.as_markup())
 

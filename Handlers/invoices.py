@@ -17,7 +17,7 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
-'gist_ekz_oplata': ['Экзамен по гистологии', 3700],
+'gist_ekz_oplata': ['Экзамен по гистологии', 4000],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
