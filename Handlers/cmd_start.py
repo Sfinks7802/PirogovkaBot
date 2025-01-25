@@ -6,7 +6,8 @@ from keyboards.menu_kb import get_kb_for_sub
 from keyboards.start_not_sub_kb import get_keyboard_for_not_sub_bibla
 from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
-                             sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt)
+                             sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
+                             zadachi_txt, okraski_txt, nervnaya_sys_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -30,6 +31,30 @@ async def get_guist_course(message: types.Message):
     builder.row(types.InlineKeyboardButton(text="Купить (500р)", callback_data='!remember5_oplata'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
     await message.answer(anatint_txt, reply_markup=builder.as_markup())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'zadachi'))
+async def get_guist_course(message: types.Message):
+    builder = InlineKeyboardBuilder()
+    builder.row(types.InlineKeyboardButton(text="Купить (300р)", callback_data='!zadachi_pay'))
+    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+    await message.answer(zadachi_txt, reply_markup=builder.as_markup())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'okraski'))
+async def get_guist_course(message: types.Message):
+    builder = InlineKeyboardBuilder()
+    builder.row(types.InlineKeyboardButton(text="Купить (500р)", callback_data='!okraski_pay'))
+    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+    await message.answer(okraski_txt, reply_markup=builder.as_markup())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'nervnaya_sys'))
+async def get_guist_course(message: types.Message):
+    builder = InlineKeyboardBuilder()
+    builder.row(types.InlineKeyboardButton(text="Купить (500р)", callback_data='!nervnaya_sys_pay'))
+    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+    await message.answer(nervnaya_sys_txt, reply_markup=builder.as_markup())
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_ekz'))
@@ -64,6 +89,17 @@ async def get_guist_course(message: types.Message):
     builder.row(types.InlineKeyboardButton(text="Купить (300р)", callback_data='!SerSod_conspect_pay'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='menu'))
     await message.answer_photo(photo=get_file('SerSod_photo.jpg'), caption=sersod_txt, reply_markup=builder.as_markup())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'anat_ekz'))
+async def get_guist_course(message: types.Message):
+    if type(find_user(message.from_user.id)) == None:
+        new_user(message.from_user.id)
+    builder = InlineKeyboardBuilder()
+    builder.row(types.InlineKeyboardButton(text="Купить (1000р)", callback_data='!anat_ekz_pay'))
+    builder.row(types.InlineKeyboardButton(text="Вопросы для чата", callback_data='anat_ekz_shpora'))
+    builder.row(types.InlineKeyboardButton(text="Назад", callback_data='menu'))
+    await message.answer_photo(photo=get_file('anat_ekz.jpg'), caption=anat_ekz_txt, reply_markup=builder.as_markup())
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'Embriogenez'))

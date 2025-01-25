@@ -22,6 +22,10 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text='Чеклист по покупкам', callback_data='checklist')],
         [types.InlineKeyboardButton(text="Курс по гистологии", callback_data="gist_course")],
         [types.InlineKeyboardButton(text="Экзамен по гистологии", callback_data="gist_ekz")],
+        [types.InlineKeyboardButton(text="Экзамен по анатомии", callback_data="anat_ekz")],
+        [types.InlineKeyboardButton(text="Задачи к экзамену", callback_data="zadachi")],
+        [types.InlineKeyboardButton(text="Веб по нервной системе", callback_data="nervnaya_sys")],
+        [types.InlineKeyboardButton(text="Окраски и микроскоп", callback_data="okraski")],
         # [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],
         [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]
     ]

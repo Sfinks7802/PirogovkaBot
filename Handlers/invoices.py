@@ -17,7 +17,11 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'nervnaya_sys_pay': ['Нервная система', 500],
+'okraski_pay': ['Окраскии микроскоп', 500],
+'anat_ekz_pay': ['Экзамен по анатомии', 1000],
 'gist_ekz_oplata': ['Экзамен по гистологии', 4000],
+'zadachi_pay': ['Задачи к экзамену', 300],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
@@ -79,6 +83,18 @@ async def successful_payment(message: types.Message):
         elif flag == 'cnsint_oplata':
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == 'okraski_pay':
+            await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
+            await bot.send_message(1924052002, text='окраски х1')
+        elif flag == 'nervnaya_sys_pay':
+            await message.answer('https://t.me/+OFH5J3bVvvJkZTVi')
+            await bot.send_message(1924052002, text='нервная система ЦНС х1')
+        elif flag == 'anat_ekz_pay':
+            await message.answer('https://t.me/+coYCZWjbNO9lYzFi')
+            await bot.send_message(1924052002, text='Анатомия экзамен х1')
+        elif flag == 'zadachi_pay':
+            await message.answer_document(get_file('Задачи к экзамену.pdf'))
+            await bot.send_message(1924052002, text='Задачи к экзамену х1')
         elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
             await bot.send_message(1924052002, text='Вспомнить всё 5 х1')
