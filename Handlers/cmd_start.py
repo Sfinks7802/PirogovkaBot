@@ -7,7 +7,7 @@ from keyboards.start_not_sub_kb import get_keyboard_for_not_sub_bibla
 from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
-                             zadachi_txt, okraski_txt, nervnaya_sys_txt)
+                             zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -16,6 +16,19 @@ from all_contents import get_file
 
 
 router = Router()
+
+
+def new_startlink(link_txt: str, cq_txt: str, pay_txt: str, msg_txt):
+    @router.message(CommandStart(deep_link=True, magic=F.args == link_txt))
+    async def get_guist_course(message: types.Message):
+        builder = InlineKeyboardBuilder()
+        builder.row(types.InlineKeyboardButton(text=cq_txt, callback_data=pay_txt))
+        builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+        await message.answer(msg_txt, reply_markup=builder.as_markup())
+
+
+new_startlink('okraski_conspect','Купить (200р)', '!okraski_conspect_pay', okraski_conspect_txt)
+
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))

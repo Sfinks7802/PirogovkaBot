@@ -17,6 +17,7 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
 'nervnaya_sys_pay': ['Нервная система', 500],
 'okraski_pay': ['Окраскии микроскоп', 500],
 'anat_ekz_pay': ['Экзамен по анатомии', 1000],
@@ -86,6 +87,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'okraski_pay':
             await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
             await bot.send_message(1924052002, text='окраски х1')
+        elif flag == 'okraski_conspect_pay':
+            await message.answer_document(get_file('Методы окраски .pdf'))
+            await bot.send_message(1924052002, text='окраски конспект х1')
         elif flag == 'nervnaya_sys_pay':
             await message.answer('https://t.me/+OFH5J3bVvvJkZTVi')
             await bot.send_message(1924052002, text='нервная система ЦНС х1')
