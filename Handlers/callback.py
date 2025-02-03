@@ -1,5 +1,5 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from texts.all_texts import (okraski_conspect_txt)
+from texts.all_texts import (okraski_conspect_txt, rotpol_txt)
 from aiogram import Router, types, F
 from all_contents import get_file
 
@@ -29,3 +29,4 @@ def new_cq(f_txt: str, cq_txt: str, pay_txt: str, msg_txt):
 #         await callback.answer()
 
 new_cq('okraski_conspect','Купить (200р)', '!okraski_conspect_pay', okraski_conspect_txt)
+new_cq('rotpol', 'Купить (200р)', '!rotpol_pay', rotpol_txt)

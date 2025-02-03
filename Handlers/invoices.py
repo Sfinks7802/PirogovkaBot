@@ -17,6 +17,7 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'rotpol_pay': ['Введение + ротовая полость ', 200],
 'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
 'nervnaya_sys_pay': ['Нервная система', 500],
 'okraski_pay': ['Окраскии микроскоп', 500],
@@ -84,6 +85,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'cnsint_oplata':
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == 'rotpol_pay':
+            await message.answer_document(get_file('пищевар 1 .pdf'))
+            await bot.send_message(1924052002, text='пищевар х1')
         elif flag == 'okraski_pay':
             await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
             await bot.send_message(1924052002, text='окраски х1')
