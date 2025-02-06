@@ -7,7 +7,8 @@ from keyboards.start_not_sub_kb import get_keyboard_for_not_sub_bibla
 from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
-                             zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt)
+                             zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
+                             org_chuv_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -29,6 +30,8 @@ def new_startlink(link_txt: str, cq_txt: str, pay_txt: str, msg_txt):
 
 new_startlink('okraski_conspect','Купить (200р)', '!okraski_conspect_pay', okraski_conspect_txt)
 new_startlink('rotpol', 'Купить (200р)', '!rotpol_pay', rotpol_txt)
+new_startlink('klet_poverh', 'Купить (500р)', '!klet_poverh_pay', klet_poverh_txt)
+new_startlink('org_chuv', 'Купить (500)', '!org_chuv_pay', org_chuv_txt)
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))

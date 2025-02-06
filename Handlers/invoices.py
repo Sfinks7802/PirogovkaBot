@@ -17,6 +17,8 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'klet_poverh_pay': ['Клеточная поверхность', 500],
+'org_chuv_pay': ['Органы чувств', 500],
 'rotpol_pay': ['Введение + ротовая полость ', 200],
 'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
 'nervnaya_sys_pay': ['Нервная система', 500],
@@ -36,7 +38,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Виртуальный товар",
                            description="Оплата виртуального товара",
-                           provider_token=os.environ.get('paytoken'),
+                           provider_token=os.environ.get('paytokenTEST'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
@@ -91,12 +93,18 @@ async def successful_payment(message: types.Message):
         elif flag == 'okraski_pay':
             await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
             await bot.send_message(1924052002, text='окраски х1')
+        elif flag == 'org_chuv_pay':
+            await message.answer('https://t.me/+EyPRfViPmSc1N2Iy')
+            await bot.send_message(1924052002, text='органы чувств х1')
         elif flag == 'okraski_conspect_pay':
             await message.answer_document(get_file('Методы окраски .pdf'))
             await bot.send_message(1924052002, text='окраски конспект х1')
         elif flag == 'nervnaya_sys_pay':
             await message.answer('https://t.me/+OFH5J3bVvvJkZTVi')
             await bot.send_message(1924052002, text='нервная система ЦНС х1')
+        elif flag == 'klet_poverh_pay':
+            await message.answer('https://t.me/+g6g7QU21w-dmNjIy')
+            await bot.send_message(1924052002, text='клеточная поверхность х1')
         elif flag == 'anat_ekz_pay':
             await message.answer('https://t.me/+coYCZWjbNO9lYzFi')
             await bot.send_message(1924052002, text='Анатомия экзамен х1')

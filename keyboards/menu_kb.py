@@ -28,6 +28,8 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text="Окраски и микроскоп", callback_data="okraski")],
         [types.InlineKeyboardButton(text="Методы окраски в гистологии", callback_data="okraski_conspect")],
         [types.InlineKeyboardButton(text="Введение + ротовая полость", callback_data="rotpol")],
+        [types.InlineKeyboardButton(text="Клеточная поверхность", callback_data="klet_poverh")],
+        [types.InlineKeyboardButton(text="Органы чувств", callback_data="org_chuv")],
         #         # [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],
         [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]
     ]
