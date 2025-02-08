@@ -38,7 +38,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Виртуальный товар",
                            description="Оплата виртуального товара",
-                           provider_token=os.environ.get('paytokenTEST'),
+                           provider_token=os.environ.get('paytoken'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
