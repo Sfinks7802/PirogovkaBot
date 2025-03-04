@@ -18,6 +18,8 @@ lableprice = {
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
 'klet_poverh_pay': ['Клеточная поверхность', 500],
+'remember5_1_pay': ['Вспомнить всё 5', 500],
+'epitely_pay': ['Эпителий веб', 500],
 'org_chuv_pay': ['Органы чувств', 500],
 'rotpol_pay': ['Введение + ротовая полость ', 200],
 'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
@@ -38,7 +40,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Виртуальный товар",
                            description="Оплата виртуального товара",
-                           provider_token=os.environ.get('paytoken'),
+                           provider_token=os.environ.get('paytokenTEST'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
@@ -93,6 +95,12 @@ async def successful_payment(message: types.Message):
         elif flag == 'okraski_pay':
             await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
             await bot.send_message(1924052002, text='окраски х1')
+        elif flag == 'epitely_pay':
+            await message.answer('https://t.me/+tallwGXoEbQwN2My')
+            await bot.send_message(1924052002, text='эпителий х1')
+        elif flag == 'remember5_1_pay':
+            await message.answer('https://t.me/+5o7BOx7MJZo5NmY6')
+            await bot.send_message(1924052002, text='вспомнить всё 5 х1')
         elif flag == 'org_chuv_pay':
             await message.answer('https://t.me/+EyPRfViPmSc1N2Iy')
             await bot.send_message(1924052002, text='органы чувств х1')
