@@ -17,6 +17,8 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'remember1_1_pay': ['ВСПОМНИТЬ ВСЕ 1', 500],
+'pishevar1_pay': ['ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', 500],
 'klet_poverh_pay': ['Клеточная поверхность', 500],
 'remember5_1_pay': ['Вспомнить всё 5', 500],
 'epitely_pay': ['Эпителий веб', 500],
@@ -95,6 +97,12 @@ async def successful_payment(message: types.Message):
         elif flag == 'okraski_pay':
             await message.answer('https://t.me/+qxO4hMIIP104ZWEy')
             await bot.send_message(1924052002, text='окраски х1')
+        elif flag == 'pishevar1_pay':
+            await message.answer('https://t.me/+FzcBktlFDphmZGJi')
+            await bot.send_message(1924052002, text='пищевар х1')
+        elif flag == 'remember1_1_pay':
+            await message.answer('https://t.me/+oTJTbtDtQPE1MTFi')
+            await bot.send_message(1924052002, text='вспомнить все 1 х1')
         elif flag == 'epitely_pay':
             await message.answer('https://t.me/+tallwGXoEbQwN2My')
             await bot.send_message(1924052002, text='эпителий х1')
