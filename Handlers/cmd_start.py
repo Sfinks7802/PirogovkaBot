@@ -8,7 +8,7 @@ from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
-                             org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt)
+                             org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -36,6 +36,7 @@ new_startlink('remember5_1', 'Купить (500)', '!remember5_1_pay', remember5
 new_startlink('epitely', 'Купить (500р)', '!epitely_pay', epiteliy_txt)
 new_startlink('remember1_1', 'Купить (500р)', '!remember1_1_pay', remember1_1_txt)
 new_startlink('pishevar1', 'Купить (500р)', '!pishevar1_pay', pishevar1_txt)
+new_startlink('web_obsh_gist', 'Купить (500р)', '!web_obsh_gist_pay', web_obsh_gist_txt)
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))

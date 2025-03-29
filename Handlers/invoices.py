@@ -26,6 +26,7 @@ lableprice = {
 'rotpol_pay': ['Введение + ротовая полость ', 200],
 'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
 'nervnaya_sys_pay': ['Нервная система', 500],
+'web_obsh_gist_pay': ['Общая гистология', 500],
 'okraski_pay': ['Окраскии микроскоп', 500],
 'anat_ekz_pay': ['Экзамен по анатомии', 1000],
 'gist_ekz_oplata': ['Экзамен по гистологии', 4000],
@@ -121,6 +122,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'klet_poverh_pay':
             await message.answer('https://t.me/+g6g7QU21w-dmNjIy')
             await bot.send_message(1924052002, text='клеточная поверхность х1')
+        elif flag == 'web_obsh_gist_pay':
+            await message.answer('https://t.me/+QOZlfbaiK9BmYjky')
+            await bot.send_message(1924052002, text='общая гистология х1')
         elif flag == 'anat_ekz_pay':
             await message.answer('https://t.me/+coYCZWjbNO9lYzFi')
             await bot.send_message(1924052002, text='Анатомия экзамен х1')

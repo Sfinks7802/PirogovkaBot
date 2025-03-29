@@ -18,6 +18,7 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text='ТА и ОПХ', url='https://drive.google.com/drive/folders/1pUWY5VNvPxq-WKubL3PxdMgpCtYrfUM0')],
         [types.InlineKeyboardButton(text='Вспомнить всё 5', callback_data='remember5_1')],
         [types.InlineKeyboardButton(text='Вспомнить всё 1', callback_data='remember1_1')],
+        [types.InlineKeyboardButton(text='Общая гистология', callback_data='web_obsh_gist')],
         [types.InlineKeyboardButton(text='ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', callback_data='pishevar1')],
         [types.InlineKeyboardButton(text='Веб по эпителию', callback_data='epitely')],
         # [types.InlineKeyboardButton(text='Вспомнить всё 4', callback_data='vskint')],
