@@ -6,6 +6,7 @@ from all_contents import get_payed_content
 from DataBase.db import update_contents
 from Filters.InvoiceFilter import InvoiceFilter
 from all_contents import get_file
+from Handlers.links_generator import generate_link
 
 router = Router()
 
@@ -91,6 +92,9 @@ async def successful_payment(message: types.Message):
             await bot.send_message(1924052002, text='Автор курса гиста х1')
         elif flag == 'cnsint_oplata':
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
+            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == '':
+            await message.answer(generate_link(chat_id=000000000000000000))
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'rotpol_pay':
             await message.answer_document(get_file('пищевар 1 .pdf'))
