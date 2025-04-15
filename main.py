@@ -16,6 +16,7 @@ async def main():
                        invoices.router, test.router, checklist.router, cnsint.router, cq_sersod_conspect.router, cq_vskint.router,
                        anatint.router, cq_remember5.router, cq_remember1.router, cq_gist_ekz.router, anat_ekz.router, zadachi.router,
                        nervnaya_sys.router, okraski.router, callback.router, links_generator.router)
+    await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
 
