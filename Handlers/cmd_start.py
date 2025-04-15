@@ -8,7 +8,8 @@ from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
-                             org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt)
+                             org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt,
+                             web_hrash_txt, web_kosty_txt, remember6_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -19,7 +20,7 @@ from all_contents import get_file
 router = Router()
 
 
-def new_startlink(link_txt: str, cq_txt: str, pay_txt: str, msg_txt):
+def new_cq(link_txt: str, cq_txt: str, pay_txt: str, msg_txt):
     @router.message(CommandStart(deep_link=True, magic=F.args == link_txt))
     async def get_guist_course(message: types.Message):
         builder = InlineKeyboardBuilder()
@@ -28,15 +29,18 @@ def new_startlink(link_txt: str, cq_txt: str, pay_txt: str, msg_txt):
         await message.answer(msg_txt, reply_markup=builder.as_markup())
 
 
-new_startlink('okraski_conspect','Купить (200р)', '!okraski_conspect_pay', okraski_conspect_txt)
-new_startlink('rotpol', 'Купить (200р)', '!rotpol_pay', rotpol_txt)
-new_startlink('klet_poverh', 'Купить (500р)', '!klet_poverh_pay', klet_poverh_txt)
-new_startlink('org_chuv', 'Купить (500)', '!org_chuv_pay', org_chuv_txt)
-new_startlink('remember5_1', 'Купить (500)', '!remember5_1_pay', remember5_1_txt)
-new_startlink('epitely', 'Купить (500р)', '!epitely_pay', epiteliy_txt)
-new_startlink('remember1_1', 'Купить (500р)', '!remember1_1_pay', remember1_1_txt)
-new_startlink('pishevar1', 'Купить (500р)', '!pishevar1_pay', pishevar1_txt)
-new_startlink('web_obsh_gist', 'Купить (500р)', '!web_obsh_gist_pay', web_obsh_gist_txt)
+new_cq('okraski_conspect','Купить (200р)', '!okraski_conspect_pay', okraski_conspect_txt)
+new_cq('rotpol', 'Купить (200р)', '!rotpol_pay', rotpol_txt)
+new_cq('klet_poverh', 'Купить (500р)', '!klet_poverh_pay', klet_poverh_txt)
+new_cq('org_chuv', 'Купить (500)', '!org_chuv_pay', org_chuv_txt)
+new_cq('remember5_1', 'Купить (500)', '!remember5_1_pay', remember5_1_txt)
+new_cq('epitely', 'Купить (500р)', '!epitely_pay', epiteliy_txt)
+new_cq('remember1_1', 'Купить (500р)', '!remember1_1_pay', remember1_1_txt)
+new_cq('pishevar1', 'Купить (500р)', '!pishevar1_pay', pishevar1_txt)
+new_cq('web_obsh_gist', 'Купить (500р)', '!web_obsh_gist_pay', web_obsh_gist_txt)
+new_cq('web_hrash', 'Купить (500р)', '!web_hrash_pay', web_hrash_txt)
+new_cq('web_kosty', 'Купить (500р)', '!web_kosty_pay', web_kosty_txt)
+new_cq('remember6', 'Купить (500р)', '!remember6_pay', remember6_txt)
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))

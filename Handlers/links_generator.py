@@ -14,8 +14,6 @@ async def generate_link(chat_id, times=1):
 
 @router.message(ChatTypeFilter(chat_type=["group", "supergroup"]), Command(commands=['get_link']))
 async def get_chat_id(message: Message):
-    link = await generate_link(message.chat.id)
-    await message.answer(f'{link}')
     await bot.send_message(chat_id=1222017921, text=f'{message.chat.id} \n {message.chat.title}')
 
 

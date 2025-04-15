@@ -1,6 +1,6 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from texts.all_texts import (okraski_conspect_txt, rotpol_txt, klet_poverh_txt, org_chuv_txt, remember5_1_txt, epiteliy_txt,
-                             pishevar1_txt, remember1_1_txt, web_obsh_gist_txt)
+                             pishevar1_txt, remember1_1_txt, web_obsh_gist_txt, web_hrash_txt, web_kosty_txt, remember6_txt)
 from aiogram import Router, types, F
 from all_contents import get_file
 
@@ -38,3 +38,6 @@ new_cq('epitely', 'Купить (500р)', '!epitely_pay', epiteliy_txt)
 new_cq('remember1_1', 'Купить (500р)', '!remember1_1_pay', remember1_1_txt)
 new_cq('pishevar1', 'Купить (500р)', '!pishevar1_pay', pishevar1_txt)
 new_cq('web_obsh_gist', 'Купить (500р)', '!web_obsh_gist_pay', web_obsh_gist_txt)
+new_cq('web_hrash', 'Купить (500р)', '!web_hrash_pay', web_hrash_txt)
+new_cq('web_kosty', 'Купить (500р)', '!web_kosty_pay', web_kosty_txt)
+new_cq('remember6', 'Купить (500р)', '!remember6_pay', remember6_txt)

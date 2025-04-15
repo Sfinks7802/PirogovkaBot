@@ -23,6 +23,9 @@ lableprice = {
 'klet_poverh_pay': ['Клеточная поверхность', 500],
 'remember5_1_pay': ['Вспомнить всё 5', 500],
 'epitely_pay': ['Эпителий веб', 500],
+'web_hrash_pay': ['Хрящевые веб', 500],
+'web_kosty_pay': ['Костные веб', 500],
+'remember6_pay': ['Вспомнить всё 6', 500],
 'org_chuv_pay': ['Органы чувств', 500],
 'rotpol_pay': ['Введение + ротовая полость ', 200],
 'okraski_conspect_pay': ['Методы окраски в гистологии', 200],
@@ -93,9 +96,18 @@ async def successful_payment(message: types.Message):
         elif flag == 'cnsint_oplata':
             await message.answer('https://t.me/+qvReZgCkdpdiZTgy')
             await bot.send_message(1924052002, text='Интенсив ЦНС х1')
-        elif flag == '':
-            await message.answer(generate_link(chat_id=000000000000000000))
-            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
+        elif flag == 'web_hrash_pay':
+            link = await generate_link(chat_id=-1002607919002)
+            await message.answer(link)
+            await bot.send_message(1924052002, text='Веб хрящевые х1')
+        elif flag == 'web_kosty_pay':
+            link = await generate_link(chat_id=-1002582782907)
+            await message.answer(link)
+            await bot.send_message(1924052002, text='Веб костные х1')
+        elif flag == 'remember6_pay':
+            link = await generate_link(chat_id=-1002611480243)
+            await message.answer(link)
+            await bot.send_message(1924052002, text='Вспомнить все 6 х1')
         elif flag == 'rotpol_pay':
             await message.answer_document(get_file('пищевар 1 .pdf'))
             await bot.send_message(1924052002, text='пищевар х1')
