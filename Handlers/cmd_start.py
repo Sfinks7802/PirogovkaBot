@@ -41,7 +41,7 @@ new_cq('web_obsh_gist', 'Купить (500р)', '!web_obsh_gist_pay', web_obsh_g
 new_cq('web_hrash', 'Купить (500р)', '!web_hrash_pay', web_hrash_txt)
 new_cq('web_kosty', 'Купить (500р)', '!web_kosty_pay', web_kosty_txt)
 new_cq('remember6', 'Купить (500р)', '!remember6_pay', remember6_txt)
-new_cq('remember2', 'Купить (500р)', '!remember2_pay', remember2_txt)
+new_cq('remember2', 'Купить (700р)', '!remember2_pay', remember2_txt)
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))
