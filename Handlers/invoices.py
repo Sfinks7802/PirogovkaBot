@@ -23,6 +23,7 @@ lableprice = {
 'klet_poverh_pay': ['Клеточная поверхность', 500],
 'remember5_1_pay': ['Вспомнить всё 5', 500],
 'epitely_pay': ['Эпителий веб', 500],
+'web_nervy_pay': ['Нервы веб', 500],
 'web_hrash_pay': ['Хрящевые веб', 500],
 'web_kosty_pay': ['Костные веб', 500],
 'remember6_pay': ['Вспомнить всё 6', 500],
@@ -113,6 +114,10 @@ async def successful_payment(message: types.Message):
             link = await generate_link(chat_id=-1002504885575)
             await message.answer(link)
             await bot.send_message(1924052002, text='Вспомнить все 2 х1')
+        elif flag == 'web_nervy_pay':
+            link = await generate_link(chat_id=-1002547695736)
+            await message.answer(link)
+            await bot.send_message(1924052002, text='Веб нервы х1')
         elif flag == 'rotpol_pay':
             await message.answer_document(get_file('пищевар 1 .pdf'))
             await bot.send_message(1924052002, text='пищевар х1')
