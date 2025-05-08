@@ -113,11 +113,11 @@ async def successful_payment(message: types.Message):
             await message.answer(link)
             await bot.send_message(1924052002, text='Вспомнить все 6 х1')
         elif flag == 'remember3_pay':
-            link = await generate_link(chat_id=-1002611480243)
+            link = await generate_link(chat_id=-1002619807577)
             await message.answer(link)
             await bot.send_message(1924052002, text='Вспомнить все 3 х1')
         elif flag == 'remember7_pay':
-            link = await generate_link(chat_id=-1002611480243)
+            link = await generate_link(chat_id=-1002682809666)
             await message.answer(link)
             await bot.send_message(1924052002, text='Вспомнить все 7 х1')
         elif flag == 'remember2_pay':
