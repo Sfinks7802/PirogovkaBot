@@ -40,6 +40,7 @@ lableprice = {
 'gist_ekz_oplata': ['Экзамен по гистологии', 4000],
 'zadachi_pay': ['Задачи к экзамену', 300],
 'cnsint_oplata': ['Интенсив по ЦНС', 1000],
+'intensiv_cns_pay': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
 'with_auther_gista_course': ['Курс по гисте', 4500]
@@ -51,7 +52,7 @@ async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
                            title="Виртуальный товар",
                            description="Оплата виртуального товара",
-                           provider_token=os.environ.get('paytoken'),
+                           provider_token=os.environ.get('paytokenTEST'),
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
@@ -112,6 +113,10 @@ async def successful_payment(message: types.Message):
             link = await generate_link(chat_id=-1002611480243)
             await message.answer(link)
             await bot.send_message(1924052002, text='Вспомнить все 6 х1')
+        elif flag == 'intensiv_cns_pay':
+            link = await generate_link(chat_id=-1002616592114)
+            await message.answer(link)
+            await bot.send_message(1924052002, text='Интенсив ЦНС х1')
         elif flag == 'remember3_pay':
             link = await generate_link(chat_id=-1002619807577)
             await message.answer(link)
