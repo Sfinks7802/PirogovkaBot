@@ -9,7 +9,8 @@ from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_in
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
                              org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt,
-                             web_hrash_txt, web_kosty_txt, remember6_txt, remember2_txt, web_nervy_txt, remember7_txt, remember3_txt)
+                             web_hrash_txt, web_kosty_txt, remember6_txt, remember2_txt, web_nervy_txt, remember7_txt, remember3_txt,
+                             intensiv_cns_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -45,6 +46,7 @@ new_cq('remember2', 'Купить (700р)', '!remember2_pay', remember2_txt)
 new_cq('web_nervy', 'Купить (500р)', '!web_nervy_pay', web_nervy_txt)
 new_cq('remember3', 'Купить (700р)', '!remember3_pay', remember3_txt)
 new_cq('remember7', 'Купить (700р)', '!remember7_pay', remember7_txt)
+new_cq('intensiv_cns', 'Купить (1000р)', '!intensiv_cns_pay', intensiv_cns_txt)
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))

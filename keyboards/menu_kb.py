@@ -26,6 +26,7 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text='Вспомнить всё 3', callback_data='remember3')],
         [types.InlineKeyboardButton(text='Вспомнить всё 7', callback_data='remember7')],
         [types.InlineKeyboardButton(text='Веб нервы', callback_data='web_nervy')],
+        [types.InlineKeyboardButton(text='Интенсив по ЦНС (новый)', callback_data='intensiv_cns')],
         [types.InlineKeyboardButton(text='ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', callback_data='pishevar1')],
         [types.InlineKeyboardButton(text='Веб по эпителию', callback_data='epitely')],
         # [types.InlineKeyboardButton(text='Вспомнить всё 4', callback_data='vskint')],
