@@ -34,17 +34,17 @@ async def get_guide(callback: types.CallbackQuery):
 
 @router.callback_query(F.data == 'guide_in')
 async def get_guide(callback: types.CallbackQuery):
-    await callback.message.edit_text(guide_in_txt)
+    await callback.message.edit_text(guide_in_txt, reply_markup=callback.message.reply_markup)
     await callback.answer()
 
 
 @router.callback_query(F.data == 'guide_chapters')
 async def get_guide(callback: types.CallbackQuery):
-    await callback.message.edit_text(guide_chapters_txt)
+    await callback.message.edit_text(guide_chapters_txt, reply_markup=callback.message.reply_markup)
     await callback.answer()
 
 
 @router.callback_query(F.data == 'guide_who')
 async def get_guide(callback: types.CallbackQuery):
-    await callback.message.edit_text(guide_who_txt)
+    await callback.message.edit_text(guide_who_txt, reply_markup=callback.message.reply_markup)
     await callback.answer()
