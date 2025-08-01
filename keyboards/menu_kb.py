@@ -44,6 +44,7 @@ def get_kb_Pirogovka_matirials():
         [types.InlineKeyboardButton(text="Введение + ротовая полость", callback_data="rotpol")],
         [types.InlineKeyboardButton(text="Клеточная поверхность", callback_data="klet_poverh")],
         [types.InlineKeyboardButton(text="Органы чувств", callback_data="org_chuv")],
+        [types.InlineKeyboardButton(text="Гайд 'Успешный студент-медик'", callback_data="time_guide")],
         #         # [types.InlineKeyboardButton(text='Конспекты_Пироговка', callback_data='all_contents')],
         [types.InlineKeyboardButton(text='Назад', callback_data='back_to_menu')]
     ]

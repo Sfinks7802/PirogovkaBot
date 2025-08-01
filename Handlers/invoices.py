@@ -7,6 +7,7 @@ from DataBase.db import update_contents
 from Filters.InvoiceFilter import InvoiceFilter
 from all_contents import get_file
 from Handlers.links_generator import generate_link
+from texts.all_texts import readFile, writeFile
 
 router = Router()
 
@@ -18,6 +19,8 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
+'time_guide_pay': ['Гайд', 990],
+'time_guide_pay_50': ['Гайд', 1490],
 'remember1_1_pay': ['ВСПОМНИТЬ ВСЕ 1', 500],
 'pishevar1_pay': ['ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', 500],
 'klet_poverh_pay': ['Клеточная поверхность', 500],
@@ -172,6 +175,14 @@ async def successful_payment(message: types.Message):
         elif flag == 'zadachi_pay':
             await message.answer_document(get_file('Задачи к экзамену.pdf'))
             await bot.send_message(1924052002, text='Задачи к экзамену х1')
+        elif flag == 'time_guide_pay_50':
+            await message.answer_document(get_file('Задачи к экзамену.pdf'))
+            await bot.send_message(1924052002, text='гайд 1490 х1')
+        elif flag == 'time_guide_pay':
+            counter = int(readFile('counter.txt'))
+            writeFile(filename='counter.txt', text=str(counter+1))
+            await message.answer_document(get_file('Задачи к экзамену.pdf'))
+            await bot.send_message(1924052002, text='гайд 990 х1')
         elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
             await bot.send_message(1924052002, text='Вспомнить всё 5 х1')
@@ -187,7 +198,8 @@ async def successful_payment(message: types.Message):
         elif flag == 'Embriogenez_conspect_pay':
             await message.answer_document(get_file('Лекция_2_эмбриогенез.pdf'))
             await bot.send_message(1924052002, text='Лекция_2_эмбриогенез х1')
-    except Exception:
+    except Exception as e:
+        print(e)
         await message.answer('Упс! Кажется произошла какая-то непрвиденная ошибка( \n'
                              'напишите @pirogovka_helper\n'
                              'отчет уже отправлен поддержке')

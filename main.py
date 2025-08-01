@@ -3,7 +3,8 @@ from aiogram import Dispatcher
 from Handlers import (cmd_start, gista_course, cq_contacts, cq_courses, cq_individual_courses,
                       cq_group_courses, cmd_my_materials, cq_all_contents, cmd_menu, cq_letniy_intensiv, bibla,
                       invoices, test, checklist, cnsint, cq_sersod_conspect, cq_vskint, anatint, cq_remember5,
-                      cq_remember1, cq_gist_ekz, anat_ekz, zadachi, nervnaya_sys, okraski, callback, links_generator)
+                      cq_remember1, cq_gist_ekz, anat_ekz, zadachi, nervnaya_sys, okraski, callback, links_generator,
+                      time_link)
 from Bot import bot
 
 
@@ -15,7 +16,7 @@ async def main():
                        cq_all_contents.router, cmd_menu.router, cq_letniy_intensiv.router, bibla.router,
                        invoices.router, test.router, checklist.router, cnsint.router, cq_sersod_conspect.router, cq_vskint.router,
                        anatint.router, cq_remember5.router, cq_remember1.router, cq_gist_ekz.router, anat_ekz.router, zadachi.router,
-                       nervnaya_sys.router, okraski.router, callback.router, links_generator.router)
+                       nervnaya_sys.router, okraski.router, callback.router, links_generator.router, time_link.router)
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 

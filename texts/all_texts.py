@@ -3,6 +3,9 @@ from pathlib import Path
 def readFile(filename, Path=Path):
     return open(Path(__file__).with_name(filename), encoding='UTF-8').read()
 
+def writeFile(filename, text, Path=Path):
+    open(Path(__file__).with_name(filename), encoding='UTF-8', mode='w').write(text)
+
 individual_courses_text = readFile('individual_courses.txt')
 groupe_courses_text = readFile('group_courses.txt')
 letniy_intensiv_text = readFile('letniy_intensiv.txt')
@@ -52,3 +55,7 @@ web_nervy_txt = readFile('web_nervy.txt')
 remember3_txt = readFile('remember3.txt')
 remember7_txt = readFile('remember7.txt')
 intensiv_cns_txt = readFile('intensiv_cns.txt')
+time_guide_txt = readFile('time_guide.txt')
+guide_in_txt = readFile('guide_in.txt')
+guide_chapters_txt = readFile('guide_chapters.txt')
+guide_who_txt = readFile('guide_who.txt')

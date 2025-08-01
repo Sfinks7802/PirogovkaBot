@@ -10,7 +10,7 @@ from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_in
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
                              org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt,
                              web_hrash_txt, web_kosty_txt, remember6_txt, remember2_txt, web_nervy_txt, remember7_txt, remember3_txt,
-                             intensiv_cns_txt)
+                             intensiv_cns_txt, time_guide_txt, readFile)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -62,6 +62,29 @@ async def get_guist_course(message: types.Message):
     builder.row(types.InlineKeyboardButton(text="Купить (500р)", callback_data='!remember5_oplata'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
     await message.answer(anatint_txt, reply_markup=builder.as_markup())
+
+
+@router.message(CommandStart(deep_link=True, magic=F.args == 'time_guide'))
+async def get_guist_course(message: types.Message):
+    counter = int(readFile('counter.txt'))
+    if counter < 50:
+        builder = InlineKeyboardBuilder()
+        builder.row(types.InlineKeyboardButton(text="Купить (990р)", callback_data='!time_guide_pay'))
+        builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
+        builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))
+        builder.row(types.InlineKeyboardButton(text="Подробнее по главам", callback_data='guide_chapters'))
+        builder.row(types.InlineKeyboardButton(text="Кому пригодится этот гайд?", callback_data='guide_who'))
+        builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+        await message.answer(time_guide_txt, reply_markup=builder.as_markup())
+    else:
+        builder = InlineKeyboardBuilder()
+        builder.row(types.InlineKeyboardButton(text="Купить (1490р)", callback_data='!time_guide_pay_50'))
+        builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
+        builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))
+        builder.row(types.InlineKeyboardButton(text="Подробнее по главам", callback_data='guide_chapters'))
+        builder.row(types.InlineKeyboardButton(text="Кому пригодится этот гайд?", callback_data='guide_who'))
+        builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
+        await message.answer(time_guide_txt, reply_markup=builder.as_markup())
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'zadachi'))
