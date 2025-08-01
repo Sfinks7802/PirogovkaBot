@@ -176,12 +176,12 @@ async def successful_payment(message: types.Message):
             await message.answer_document(get_file('Задачи к экзамену.pdf'))
             await bot.send_message(1924052002, text='Задачи к экзамену х1')
         elif flag == 'time_guide_pay_50':
-            await message.answer_document(get_file('Задачи к экзамену.pdf'))
+            await message.answer_document(get_file('Гайд.pdf'))
             await bot.send_message(1924052002, text='гайд 1490 х1')
         elif flag == 'time_guide_pay':
             counter = int(readFile('counter.txt'))
             writeFile(filename='counter.txt', text=str(counter+1))
-            await message.answer_document(get_file('Задачи к экзамену.pdf'))
+            await message.answer_document(get_file('Гайд.pdf'))
             await bot.send_message(1924052002, text='гайд 990 х1')
         elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
