@@ -1,5 +1,5 @@
 from aiogram import Router, F, types
-from texts.all_texts import time_guide_txt, guide_who_txt, guide_in_txt, guide_chapters_txt, readFile
+from texts.all_texts import time_guide_txt, guide_who_txt, guide_in_txt, guide_chapters_txt, readFile, low_price_txt
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
@@ -12,8 +12,9 @@ async def get_guide(callback: types.CallbackQuery):
     counter = int(readFile('counter.txt'))
     if counter < 50:
         builder = InlineKeyboardBuilder()
-        builder.row(types.InlineKeyboardButton(text="Купить (990р)", callback_data='!time_guide_pay'))
+        builder.row(types.InlineKeyboardButton(text="Купить (845р)", callback_data='!time_guide_pay'))
         builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
+        builder.row(types.InlineKeyboardButton(text="СКИДКА", callback_data='low_price'))
         builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))
         builder.row(types.InlineKeyboardButton(text="Подробнее по главам", callback_data='guide_chapters'))
         builder.row(types.InlineKeyboardButton(text="Кому пригодится этот гайд?", callback_data='guide_who'))
@@ -22,7 +23,7 @@ async def get_guide(callback: types.CallbackQuery):
         await callback.answer()
     else:
         builder = InlineKeyboardBuilder()
-        builder.row(types.InlineKeyboardButton(text="Купить (1490р)", callback_data='!time_guide_pay_50'))
+        builder.row(types.InlineKeyboardButton(text="Купить (845р)", callback_data='!time_guide_pay'))
         builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
         builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))
         builder.row(types.InlineKeyboardButton(text="Подробнее по главам", callback_data='guide_chapters'))
@@ -47,4 +48,10 @@ async def get_guide(callback: types.CallbackQuery):
 @router.callback_query(F.data == 'guide_who')
 async def get_guide(callback: types.CallbackQuery):
     await callback.message.edit_text(guide_who_txt, reply_markup=callback.message.reply_markup)
+    await callback.answer()
+
+
+@router.callback_query(F.data == 'low_price')
+async def get_guide(callback: types.CallbackQuery):
+    await callback.message.edit_text(low_price_txt, reply_markup=callback.message.reply_markup)
     await callback.answer()

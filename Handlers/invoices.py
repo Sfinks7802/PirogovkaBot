@@ -19,7 +19,7 @@ lableprice = {
 'remember1_oplata': ['Вспомнить всё 1', 500],
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
-'time_guide_pay': ['Гайд', 990],
+'time_guide_pay': ['Гайд', 845],
 'time_guide_pay_50': ['Гайд', 1490],
 'remember1_1_pay': ['ВСПОМНИТЬ ВСЕ 1', 500],
 'pishevar1_pay': ['ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', 500],
@@ -182,7 +182,7 @@ async def successful_payment(message: types.Message):
             counter = int(readFile('counter.txt'))
             writeFile(filename='counter.txt', text=str(counter+1))
             await message.answer_document(get_file('Гайд.pdf'))
-            await bot.send_message(1924052002, text='гайд 990 х1')
+            await bot.send_message(1924052002, text='гайд 845 х1')
         elif flag == 'remember5_oplata':
             await message.answer('https://t.me/+RWQZjfbcmc03MjYy')
             await bot.send_message(1924052002, text='Вспомнить всё 5 х1')
