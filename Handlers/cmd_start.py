@@ -77,7 +77,7 @@ async def get_guist_course(message: types.Message):
     counter = int(readFile('counter.txt'))
     if counter < 50:
         builder = InlineKeyboardBuilder()
-        builder.row(types.InlineKeyboardButton(text="Купить (1290р)", callback_data='!time_guide_pay_50'))
+        builder.row(types.InlineKeyboardButton(text="Купить (1690р)", callback_data='!time_guide_pay_50'))
         builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
         # builder.row(types.InlineKeyboardButton(text="СКИДКА", callback_data='low_price'))
         builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))
@@ -87,7 +87,7 @@ async def get_guist_course(message: types.Message):
         await message.answer(time_guide_txt, reply_markup=builder.as_markup())
     else:
         builder = InlineKeyboardBuilder()
-        builder.row(types.InlineKeyboardButton(text="Купить (1290р)", callback_data='!time_guide_pay_50'))
+        builder.row(types.InlineKeyboardButton(text="Купить (1690р)", callback_data='!time_guide_pay_50'))
         builder.row(types.InlineKeyboardButton(text="О гайде", callback_data='time_guide'))
         # builder.row(types.InlineKeyboardButton(text="СКИДКА", callback_data='low_price'))
         builder.row(types.InlineKeyboardButton(text="Что внутри?", callback_data='guide_in'))

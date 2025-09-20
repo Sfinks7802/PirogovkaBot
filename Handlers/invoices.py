@@ -20,7 +20,7 @@ lableprice = {
 'SerSod_conspect_pay': ['Конспект ССС', 300],
 'Embriogenez_conspect_pay': ['Эмбриогенез', 300],
 'time_guide_pay': ['Гайд', 845],
-'time_guide_pay_50': ['Гайд', 1290],
+'time_guide_pay_50': ['Гайд', 1690],
 'remember1_1_pay': ['ВСПОМНИТЬ ВСЕ 1', 500],
 'pishevar1_pay': ['ВЕБИНАР ПИЩЕВАРИТЕЛЬНАЯ 1', 500],
 'klet_poverh_pay': ['Клеточная поверхность', 500],
