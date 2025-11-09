@@ -3,7 +3,7 @@ from aiogram.types import Message, LabeledPrice
 from Bot import bot
 import os
 from all_contents import get_payed_content
-from DataBase.db import update_contents
+# from DataBase.db import update_contents
 from Filters.InvoiceFilter import InvoiceFilter
 from all_contents import get_file
 from Handlers.links_generator import generate_link

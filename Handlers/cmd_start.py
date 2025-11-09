@@ -4,7 +4,7 @@ from aiogram.types import Message, ChatMemberLeft
 from Bot import bot
 from keyboards.menu_kb import get_kb_for_sub
 from keyboards.start_not_sub_kb import get_keyboard_for_not_sub_bibla
-from DataBase.db import new_user, find_user
+# from DataBase.db import new_user, find_user
 from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_intensiv_text, cnsint_txt, not_sub_txt, bibla_text,
                              sersod_txt, anatint_txt, embriogenez_txt, remember5_txt, remember1_txt, gista_ekz_txt, anat_ekz_txt,
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
@@ -51,8 +51,8 @@ new_cq('intensiv_cns', 'Купить (1000р)', '!intensiv_cns_pay', intensiv_cn
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'gist_course'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     await message.answer(gista_course_txt, reply_markup=get_kb_for_gista_course())
 
 
@@ -147,8 +147,8 @@ async def get_guist_course(message: types.Message):
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'SerSod'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text="Купить (300р)", callback_data='!SerSod_conspect_pay'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='menu'))
@@ -157,8 +157,8 @@ async def get_guist_course(message: types.Message):
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'anat_ekz'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text="Купить (1000р)", callback_data='!anat_ekz_pay'))
     builder.row(types.InlineKeyboardButton(text="Вопросы для чата", callback_data='anat_ekz_shpora'))
@@ -168,8 +168,8 @@ async def get_guist_course(message: types.Message):
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'Embriogenez'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text="Купить (300р)", callback_data='!Embriogenez_conspect_pay'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='menu'))
@@ -178,15 +178,15 @@ async def get_guist_course(message: types.Message):
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'bibla'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     await message.answer(bibla_text, reply_markup=get_kb_bibla())
 
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'cnsint'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text="Купить (1000р)", callback_data='!cnsint_oplata'))
     builder.row(types.InlineKeyboardButton(text="Назад", callback_data='Pirogovka_matirials'))
@@ -195,8 +195,8 @@ async def get_guist_course(message: types.Message):
 
 @router.message(CommandStart(deep_link=True, magic=F.args == 'learn_gide'))
 async def get_guist_course(message: types.Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     await message.answer(letniy_intensiv_text)
     await message.answer(text=letniy_intensiv_2_text, reply_markup=get_kb_leto())
 
@@ -224,7 +224,7 @@ async def check_sub(callback: types.CallbackQuery):
 
 @router.message(Command('start'))
 async def cmd_start(message: Message):
-    if type(find_user(message.from_user.id)) == None:
-        new_user(message.from_user.id)
+    # if type(find_user(message.from_user.id)) == None:
+    #     new_user(message.from_user.id)
     await message.answer('Добро пожаловать!',reply_markup=get_kb_for_sub())
 
