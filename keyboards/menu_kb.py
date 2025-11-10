@@ -10,6 +10,12 @@ def get_kb_for_sub():
     keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
     return keyboard
 
+def get_kb_for_sub_guide_v2():
+    buttons = [[types.InlineKeyboardButton(text="👉 Хочу узнать, как это работает", callback_data="guide_v2_intro")],
+               [types.InlineKeyboardButton(text='📘 Уже слышал(а) про гайд', callback_data='guide_v2_fasttrack')]]
+    keyboard = types.InlineKeyboardMarkup(inline_keyboard=buttons)
+    return keyboard
+
 def get_kb_Pirogovka_matirials():
     buttons = [
         # [types.InlineKeyboardButton(text='Гайд по учебе', callback_data='letniy_intensiv')],

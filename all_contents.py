@@ -37,6 +37,8 @@ def get_payed_content(content_name):
 # def get_photo():
 #     return get_file('photo_5255942924443705185_y.jpg')
 
-def get_file(name):
-    file = FSInputFile(path=os.path.join(all_media_dir, name))
-    return file
+def get_file(name, subdir = None):
+    if subdir is None:
+     return FSInputFile(path=os.path.join(all_media_dir, name))
+    else:
+     return FSInputFile(path=os.path.join(all_media_dir, subdir, name))

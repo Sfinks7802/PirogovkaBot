@@ -4,14 +4,14 @@ from Handlers import (cmd_start, gista_course, cq_contacts, cq_courses, cq_indiv
                       cq_group_courses, cmd_my_materials, cq_all_contents, cmd_menu, cq_letniy_intensiv, bibla,
                       invoices, test, checklist, cnsint, cq_sersod_conspect, cq_vskint, anatint, cq_remember5,
                       cq_remember1, cq_gist_ekz, anat_ekz, zadachi, nervnaya_sys, okraski, callback, links_generator,
-                      time_link)
+                      time_link, guide_v2)
 from Bot import bot
 
 
 async def main():
     dp = Dispatcher()
 
-    dp.include_routers(cmd_start.router, gista_course.router, cq_contacts.router,
+    dp.include_routers(guide_v2.router, cmd_start.router, gista_course.router, cq_contacts.router,
                        cq_courses.router, cq_individual_courses.router, cq_group_courses.router, cmd_my_materials.router,
                        cq_all_contents.router, cmd_menu.router, cq_letniy_intensiv.router, bibla.router,
                        invoices.router, test.router, checklist.router, cnsint.router, cq_sersod_conspect.router, cq_vskint.router,

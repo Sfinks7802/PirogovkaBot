@@ -1,7 +1,11 @@
 from pathlib import Path
+from posixpath import join
 
-def readFile(filename, Path=Path):
-    return open(Path(__file__).with_name(filename), encoding='UTF-8').read()
+def readFile(filename, subdir = None, Path=Path):
+    if subdir is None:
+        return open(Path(__file__).with_name(filename), encoding='UTF-8').read()
+    else:
+        return open(Path(__file__).parent.joinpath(subdir, filename), encoding='UTF-8').read()
 
 def writeFile(filename, text, Path=Path):
     open(Path(__file__).with_name(filename), encoding='UTF-8', mode='w').write(text)
@@ -60,3 +64,14 @@ guide_in_txt = readFile('guide_in.txt')
 guide_chapters_txt = readFile('guide_chapters.txt')
 guide_who_txt = readFile('guide_who.txt')
 low_price_txt = readFile('low_price.txt')
+
+guide_v2_start_txt = readFile('start.txt', subdir='guide_v2')
+guide_v2_intro_txt = readFile('intro.txt', subdir='guide_v2')
+guide_v2_fasttrack_txt = readFile('fasttrack.txt', subdir='guide_v2')
+guide_v2_whats_inside_txt = readFile('whats_inside.txt', subdir='guide_v2')
+guide_v2_contents_txt = readFile('contents.txt', subdir='guide_v2')
+guide_v2_example_page_txt = readFile('example_page.txt', subdir='guide_v2')
+guide_v2_target_audience_txt = readFile('target_audience.txt', subdir='guide_v2')
+guide_v2_reviews_txt = readFile('reviews.txt', subdir='guide_v2')
+guide_v2_questionnaire_txt = readFile('questionnaire.txt', subdir='guide_v2')
+guide_v2_subscribe_after_buy_txt = readFile('subscribe_after_buy.txt', subdir='guide_v2')
