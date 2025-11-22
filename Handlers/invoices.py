@@ -46,7 +46,9 @@ lableprice = {
 'intensiv_cns_pay': ['Интенсив по ЦНС', 1000],
 'with_courator_gista_course': ['Курс по гисте', 2500],
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
-'with_auther_gista_course': ['Курс по гисте', 4500]
+'with_auther_gista_course': ['Курс по гисте', 4500],
+'ai_for_med_buy_now_2000': ['Гайд по ИИ для медика', 2000],
+'ai_for_med_buy_now_3000': ['Гайд по ИИ для медика', 3000]
 }
 
 
@@ -82,7 +84,7 @@ async def successful_payment(message: types.Message):
             await message.answer('https://t.me/+_z_n5WYAgNJhOTBi')
             await bot.send_message(1924052002, text='Я сам гиста х1')
         elif flag == 'vskint_oplata':
-            await message.answer('Отлично! Оплата прошла, скоро вам напишет помошник @pirogovka_helper')
+            await message.answer('Отлично! Оплата прошла, скоро вам напишет помошник @pirogovkahelper')
             await bot.send_message(1924052002, text=f'Вспмнить всё х1, username пользователя: @{message.from_user.username}')
         elif flag == 'anatint_oplata':
             await message.answer('https://t.me/+mzccYh1g49JiMzAy')
@@ -199,9 +201,13 @@ async def successful_payment(message: types.Message):
         elif flag == 'Embriogenez_conspect_pay':
             await message.answer_document(get_file('Лекция_2_эмбриогенез.pdf'))
             await bot.send_message(1924052002, text='Лекция_2_эмбриогенез х1')
+        elif flag == 'ai_for_med_buy_now_2000' :
+            await message.answer('https://t.me/+1JLVKinNG7dmZjcy')
+            await bot.send_message(8058195384, text=f'ИИ для медика х1 2000, username пользователя: @{message.from_user.username}')
+        elif flag == 'ai_for_med_buy_now_3000':
+            await message.answer('https://t.me/+1JLVKinNG7dmZjcy')
+            await bot.send_message(8058195384, text=f'ИИ для медика х1 3000, username пользователя: @{message.from_user.username}')
     except Exception as e:
         print(e)
-        await message.answer('Упс! Кажется произошла какая-то непрвиденная ошибка( \n'
-                             'напишите @pirogovka_helper\n'
-                             'отчет уже отправлен поддержке')
-        await bot.send_message(1924052002, text=f'Опять ошибка( техническое имя товара: {flag}, username пользователя: @{message.from_user.username}')
+        await message.answer('Упс! Кажется произошла какая-то непредвиденная ошибка. Напишите @pirogovkahelper.')
+        await bot.send_message(8058195384, text=f'Опять ошибка( техническое имя товара: {flag}, username пользователя: @{message.from_user.username}')

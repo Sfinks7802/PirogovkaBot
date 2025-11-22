@@ -10,12 +10,13 @@ from texts.all_texts import (gista_course_txt, letniy_intensiv_2_text, letniy_in
                              zadachi_txt, okraski_txt, nervnaya_sys_txt, okraski_conspect_txt, rotpol_txt, klet_poverh_txt,
                              org_chuv_txt, remember5_1_txt, epiteliy_txt, pishevar1_txt, remember1_1_txt, web_obsh_gist_txt,
                              web_hrash_txt, web_kosty_txt, remember6_txt, remember2_txt, web_nervy_txt, remember7_txt, remember3_txt,
-                             intensiv_cns_txt, time_guide_txt, readFile, low_price_txt, guide_v2_start_txt)
+                             intensiv_cns_txt, time_guide_txt, readFile, low_price_txt, guide_v2_start_txt, oferta_txt)
 from Handlers.gista_course import get_kb_for_gista_course
 from Handlers.cq_letniy_intensiv import get_kb_leto
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from Handlers.bibla import get_kb_bibla
 from all_contents import get_file
+from keyboards.oferta_kb import get_kb_for_oferta_agree
 
 
 router = Router()
@@ -221,10 +222,12 @@ async def check_sub(callback: types.CallbackQuery):
     else:
         await callback.message.edit_text(not_sub_txt, reply_markup=get_keyboard_for_not_sub_bibla())
 
+@router.message(CommandStart(deep_link=True, magic=F.args == 'ai_for_med'))
+async def get_ai_for_med(message: types.Message):
+    await message.answer(oferta_txt, reply_markup=get_kb_for_oferta_agree('ai_for_med_buy_now'), parse_mode='MarkdownV2')
 
 @router.message(Command('start'))
 async def cmd_start(message: Message):
     # if type(find_user(message.from_user.id)) == None:
     #     new_user(message.from_user.id)
     await message.answer(guide_v2_start_txt, reply_markup=get_kb_for_sub_guide_v2(), parse_mode='MarkdownV2')
-

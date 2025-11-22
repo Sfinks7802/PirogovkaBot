@@ -75,3 +75,8 @@ guide_v2_target_audience_txt = readFile('target_audience.txt', subdir='guide_v2'
 guide_v2_reviews_txt = readFile('reviews.txt', subdir='guide_v2')
 guide_v2_questionnaire_txt = readFile('questionnaire.txt', subdir='guide_v2')
 guide_v2_subscribe_after_buy_txt = readFile('subscribe_after_buy.txt', subdir='guide_v2')
+
+
+ai_for_med_2000_txt = readFile('ai_for_med_2000.txt')
+ai_for_med_3000_txt = readFile('ai_for_med_3000.txt')
+oferta_txt = readFile('oferta.txt')
