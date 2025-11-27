@@ -226,6 +226,10 @@ async def check_sub(callback: types.CallbackQuery):
 async def get_ai_for_med(message: types.Message):
     await message.answer(oferta_txt, reply_markup=get_kb_for_oferta_agree('ai_for_med_buy_now'), parse_mode='MarkdownV2')
 
+@router.message(CommandStart(deep_link=True, magic=F.args == 'conf_for_med'))
+async def get_conf_for_med(message: types.Message):
+    await message.answer(oferta_txt, reply_markup=get_kb_for_oferta_agree('conf_for_med_buy_now'), parse_mode='MarkdownV2')
+
 @router.message(Command('start'))
 async def cmd_start(message: Message):
     # if type(find_user(message.from_user.id)) == None:

@@ -48,7 +48,8 @@ lableprice = {
 'anatint_oplata': ['Анатомия. Черепно-мозговые нервы.', 400],
 'with_auther_gista_course': ['Курс по гисте', 4500],
 'ai_for_med_buy_now_2000': ['Гайд по ИИ для медика', 2000],
-'ai_for_med_buy_now_3000': ['Гайд по ИИ для медика', 3000]
+'ai_for_med_buy_now_3000': ['Гайд по ИИ для медика', 3000],
+'conf_for_med_buy_now': ['Вебинар по поиску конференций для медика', 500]
 }
 
 
@@ -207,6 +208,9 @@ async def successful_payment(message: types.Message):
         elif flag == 'ai_for_med_buy_now_3000':
             await message.answer('https://t.me/+1JLVKinNG7dmZjcy')
             await bot.send_message(8058195384, text=f'ИИ для медика х1 3000, username пользователя: @{message.from_user.username}')
+        elif flag == 'conf_for_med_buy_now':
+            await message.answer('https://t.me/+TuBa9AgAgRAyMzE6')
+            await bot.send_message(8058195384, text=f'Вебинар по поиску конференций для медика х1 500, username пользователя: @{message.from_user.username}')
     except Exception as e:
         print(e)
         await message.answer('Упс! Кажется произошла какая-то непредвиденная ошибка. Напишите @pirogovkahelper.')

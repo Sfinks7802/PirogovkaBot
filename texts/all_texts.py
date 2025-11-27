@@ -79,4 +79,5 @@ guide_v2_subscribe_after_buy_txt = readFile('subscribe_after_buy.txt', subdir='g
 
 ai_for_med_2000_txt = readFile('ai_for_med_2000.txt')
 ai_for_med_3000_txt = readFile('ai_for_med_3000.txt')
+conf_for_med_txt = readFile('conf_for_med.txt')
 oferta_txt = readFile('oferta.txt')
