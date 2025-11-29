@@ -2,6 +2,7 @@ from aiogram import Router, types, F
 from aiogram.types import Message, LabeledPrice
 from Bot import bot
 import os
+import json
 from all_contents import get_payed_content
 # from DataBase.db import update_contents
 from Filters.InvoiceFilter import InvoiceFilter
@@ -49,16 +50,37 @@ lableprice = {
 'with_auther_gista_course': ['Курс по гисте', 4500],
 'ai_for_med_buy_now_2000': ['Гайд по ИИ для медика', 2000],
 'ai_for_med_buy_now_3000': ['Гайд по ИИ для медика', 3000],
-'conf_for_med_buy_now': ['Вебинар по поиску конференций для медика', 500]
+'conf_for_med_buy_now': ['Вебинар по поиску конференций для медика', 90]
 }
 
 
 @router.callback_query(InvoiceFilter())
 async def pay_money(callback: types.CallbackQuery):
     await bot.send_invoice(callback.from_user.id,
-                           title="Виртуальный товар",
-                           description="Оплата виртуального товара",
+                           title="Покупка",
+                           description="Оплата заказа",
                            provider_token=os.environ.get('paytoken'),
+                           provider_data=json.dumps(
+                            {
+                                "receipt": {
+                                    "items": [
+                                        {
+                                            "description": lableprice[callback.data[1::]][0],
+                                            "quantity": 1,
+                                            "amount": {
+                                                "value": lableprice[callback.data[1::]][1],
+                                                "currency": "RUB"
+                                            },
+                                            "vat_code": 1,
+                                            "capture": True,
+                                        }
+                                    ],
+                                    "capture": True,
+                                },
+                                "capture": True,
+                            }),
+                            need_email=True,
+                            send_email_to_provider=True,
                            currency="rub",
                            prices=[LabeledPrice(label=lableprice[callback.data[1::]][0], amount=lableprice[callback.data[1::]][1] * 100)],
                            payload=callback.data[1::],
